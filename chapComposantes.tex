@@ -1,9 +1,5 @@
 \chapter{Composantes du système}
 
-%Ce que l'on désigne habituellement comme le ventilateur VDR-4 est en fait composé d'un ensemle de composantes au fonctionnement relativement indépendant.
-%
-%Le module de contrôle -désigné VDR-4 par le manufacturier- et le phasitron sont les deux composantes strictement essentiel. Le module de monitorage et le système
-%
 \section{Module de contrôle}
 
 Le module de contrôle est la composante qui permet de régler les paramètres de la ventilation délivrée par le VDR-4. 
@@ -21,9 +17,9 @@ Le fonctionnement du module de contrôle est exclusivement pneumatique, à l’e
 
 Le circuit logique du module de contrôle est constitué d’un agencement d’une trentaine de cartouches pneumatiques. Cette conception a pour résultat que plusieurs paramètres réglables s’inter-influencent. Par exemple, une augmentation de l’amplitude des percussions à l’inspiration (bouton DEBIT PULSE) entrainera aussi une augmentation  de l’amplitude des percussions à l’expiration.
 
-\begin{figure}
+\begin{figure}[h]
 	\input{fig/fig-cartouche}
-\caption{Fonctionnement d'une cartouche pneumatique. À mesure que la pression augmente derrière le diaphragme, celui-ci se déforme, emmenant  le piston à obstruer l’arrivée de gaz. Les ouvertures se trouvant derrière le diaphragme permettent à la pression dans la cartouche de revenir à la normale lorsque l’arrivée de gaz est obstruée, ramenant ainsi le diaphragme à sa position initiale.}
+\caption{Fonctionnement d'une cartouche pneumatique. À mesure que la pression augmente derrière le diaphragme, celui-ci se déforme, emmenant  le piston à obstruer l’arrivée de gaz.}
 \end{figure}
 
 %\begin{figure}
@@ -42,13 +38,15 @@ Lorsqu’un débit d’air est injecté dans le tube de venturi, il se déplace 
 
 L’absence de circuit respiratoire entre le phasitron et l’interface patient ainsi que l’utilisation de tubulures peu compliantes entre le phasitron et le module de contrôle évitent l’atténuation des percussions dans le volume compressible du circuit.
 
-%\begin{figure}
-%	\caption{Le phasitron.}
-%\end{figure}
+\begin{figure}
+	\input{fig/fig-phasitron}
+	\caption{Le phasitron.}
+\end{figure}
 
-%\begin{figure}
-%	\caption{Fonctionnement du phasitron. Le débit en provenance du module de contrôle déforme le diaphragme et déplace le tube de venturi vers l’avant lors de l’inspiration, obstruant ainsi l’orifice expiratoire. À l’expiration, le diaphragme reprend sa forme initiale et ramène le tube de venturi vers l’arrière, libérant ainsi l’orifice expiratoire.}
-%\end{figure}
+\begin{figure}
+	\input{fig/fig-phasitron-coupe}
+	\caption{Fonctionnement du phasitron. Le débit en provenance du module de contrôle déforme le diaphragme et déplace le tube de venturi vers l’avant lors de l’inspiration, obstruant ainsi l’orifice expiratoire. À l’expiration, le diaphragme reprend sa forme initiale et ramène le tube de venturi vers l’arrière, libérant ainsi l’orifice expiratoire.}
+\end{figure}
 
 \section{Système d’humidification}
 
