@@ -1,0 +1,38 @@
+\begin{columns}
+	\column{0.48\textwidth}
+	\begin{block}{Cartouche ouverte}
+		\vspace{.25cm}
+	\begin{tikzpicture}
+		\pic [name=C] {cartouche};
+		\pic {obturateur-bas};
+
+		\draw [double distance=5.3mm,]
+		(CO) -- ++(2,0) (CO) ++ (1,0) |- (CS)
+		node [pos=0.25] {$\downarrow$}
+		node [pos=0.75] {$\leftarrow$}
+		;
+
+		\draw (CI) node {$\downarrow$};
+		\draw (CO) node {$\rightarrow$};
+
+	\end{tikzpicture}
+	\end{block}
+
+	\column{0.48\textwidth}
+
+	\begin{block}{Cartouche fermée}
+		\vspace{.25cm}
+	\begin{tikzpicture}
+
+		\pic [name=C] {cartouche};
+		\pic {obturateur-haut};
+
+		\draw [double distance=5.3mm,]
+		(CO) -- ++(2,0) (CO) ++ (1,0) |- (CS) 
+		;
+
+		\draw (CI) node {$\downarrow$};
+
+	\end{tikzpicture}
+	\end{block}
+\end{columns}

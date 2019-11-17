@@ -1,0 +1,96 @@
+
+\begin{tikzpicture}[
+	fleche/.style={
+			line width=0.6mm,
+			->,
+			shorten >=1mm, 
+			shorten <=1mm, 
+			font=\small,
+			vertvdr!60
+		},
+		cid/.style={
+			above=1.35*\ldist,
+			align=center,
+			font=\tiny
+		},
+		ampl/.style={
+			fill=vertvdr!72
+		},
+		marker/.style={
+			line width=0.3mm,
+			vertvdr!60
+		},
+		index/.style={
+			midway,
+			below,
+			inner
+			sep=0,
+			font=\tiny,
+			scale=0.8
+		},
+		aug/.style={
+			midway,
+			above,
+			inner
+			sep=1mm,
+			font=\tiny,
+			scale=0.7
+		}
+]
+
+\colorlet{vertvdr}{green!50!black}
+
+\newcommand{\pexp}{9.5}
+\newcommand{\pins}{35.5}
+\newcommand{\arrfirst}{1.69}
+\newcommand{\arrseccond}{5.68}
+\newcommand{\ldist}{7mm}
+
+	\begin{axis} [
+			height=0.80\textheight,
+			xtick={0,2,4},
+			axis x line=bottom,
+			axis y line=left,
+			enlarge y limits={0.1, upper},
+			enlarge x limits={0.05, upper}
+		]
+
+		\addplot [
+			restrict x to domain=0:6,
+			thin,
+			]table[x=time, y=Pao] {dat/simvent1.dat};
+
+		\coordinate (A) at (axis cs:1.445,0.1);
+		\coordinate (B) at (axis cs:1.445,\pins);
+
+		\draw [marker] (axis cs:0, \pins) -- (axis cs:6, \pins);
+		\draw [marker] (axis cs:4, \pexp) -- (axis cs:6, \pexp);
+
+		\draw [fleche] (axis cs:\arrfirst, 0) -- (axis cs:\arrfirst, \pins)
+		coordinate [midway] (A);
+
+		\draw [fleche] (axis cs:\arrseccond, \pins) -- (axis cs:\arrseccond, \pexp)
+		coordinate [midway] (B);
+
+		\path (A) ++(axis cs: -.7,0) coordinate (C);
+		\path (B) ++(axis cs: -.7,-.4) coordinate (D);
+
+	\end{axis}
+
+	\path (C) pic [ampl] {aknob} 
+	node [cid] {DEBIT\\PULSE};
+
+	\draw [<->] (C) ++(\ldist, -\ldist) -- ++(0, 2*\ldist) -- ++(-2*\ldist, 0) 
+	node [index] {$\blacktriangledown$}
+	node [aug] {AUGMENTER}
+	;
+
+	\path (D) pic [ampl] {aknob}
+	node [cid] {CPAP\\ OSCILLANTE};
+
+	\draw [->] (D) ++(\ldist, \ldist) -- ++(-2*\ldist, 0)
+	node [index] {$\blacktriangledown$}
+	node [aug] {AUGMENTER}
+	;
+
+\end{tikzpicture}

@@ -1,0 +1,18 @@
+	\begin{tikzpicture}
+		\begin{groupplot}[
+				group style={
+					group size=2 by 1
+				},
+				width=0.48\textwidth,
+				restrict x to domain=1.5:4,
+				every axis plot post/.style={
+					mark=none
+				}
+			]
+			\nextgroupplot[title=Résistances normales]
+			\addplot table[x=time, y=Pao] {dat/raw5.dat};
+
+		 \nextgroupplot[title=Résistances augmentées]
+			\addplot table[x=time, y=Pao] {dat/raw15.dat};
+		\end{groupplot}
+	\end{tikzpicture}

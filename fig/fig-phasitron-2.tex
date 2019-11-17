@@ -1,0 +1,15 @@
+\centering
+\begin{tikzpicture}[
+]
+
+	\pic [name=Phasitron, scale=0.85] {phasitron};
+	\begin{axis}[
+			at={(Phasitron-Pt)},
+			anchor=east,
+			width=4cm,
+			height=3cm,
+			axis lines=middle
+			]
+		\plot +[mark=none] table [restrict x to domain=3:4]{dat/simvent1.dat};
+	\end{axis}
+\end{tikzpicture}

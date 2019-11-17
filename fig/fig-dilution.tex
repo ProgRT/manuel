@@ -1,0 +1,17 @@
+\begin{tikzpicture}
+\begin{axis}[
+enlargelimits=false,
+xlabel=Pression \tiny{($cmH_2O$)},
+ylabel=Ratio $\frac{Appel\ d'air}{Air\ inject \acute{e}}$,
+ytick={0,1,2,3,4,5},
+xtick={0,10,20,30,40},
+width=0.3\textwidth,
+height={},
+title=Ratio d'appel d'air,
+axis lines=left,
+enlargelimits={0.2, upper},
+font=\tiny
+]
+	\addplot +[mark=none, structure] coordinates {(0,5) (40,0)};
+\end{axis}
+\end{tikzpicture}

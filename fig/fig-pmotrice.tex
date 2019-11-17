@@ -1,0 +1,36 @@
+\newcommand{\pexp}{5}
+\newcommand{\pins}{18}
+\newcommand{\arrpos}{1.6}
+\def\aShift{4.1cm}
+
+\begin{tikzpicture}
+	\begin{axis} [
+			height=0.80\textheight,
+			extra y ticks={\pexp, \pins},
+			extra y tick labels={$P_{ins. moy.}$, $P_{exp. moy.}$},
+			xtick={0,2,4},
+			ytick={0,30},
+			axis x line=bottom,
+			axis y line=middle,
+			enlarge y limits={0.2, upper}
+			]
+
+		\addplot [
+			restrict x to domain=0:4,
+			%vertchum!60!black, 
+			thin,
+			]table[x=time, y=Pao] {dat/simvent1.dat};
+
+		\coordinate (A) at (axis cs:0,\pexp);
+		\coordinate (B) at (axis cs:0,\pins);
+	\end{axis}
+		\draw [
+			%bleufoncechum,
+			very thick,
+			->,
+			shorten >=1mm, 
+			shorten <=1mm, 
+			font=\small
+		]([xshift=\aShift]A) -- ([xshift=\aShift]B) node [pos=0.6, left=3mm, rounded corners, thin]{$P_{motrice}$};
+
+\end{tikzpicture}

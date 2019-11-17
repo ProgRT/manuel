@@ -1,0 +1,66 @@
+\begin{columns}
+	\column{0.5\textwidth}
+	\begin{block}{Insuflation}
+		\vspace{.25cm}
+	\begin{tikzpicture}[
+			scale=.60,
+			every node/.style={transform shape}
+			]
+
+	\pic [name=P, draw=black!50, fill=gray!10] {phasitron-coupe};
+	\pic {venturi-avance};
+	\path (P-S) -- (P-Pt) 
+		node [pos=0.32] (J) {}
+		coordinate [pos=0.15] (D)
+		;
+
+
+		\draw [structure, line width=.2mm, ->] (P-S) ++(3mm,0) to (D);
+		\draw [
+			structure, 
+			line width=.2mm,
+			->, 
+shorten <=1mm,
+			] (D) to (J);
+
+		\draw [
+			structure, 
+			line width=.5mm, 
+			->, 
+			out=90, 
+			in=-45,
+			shorten >=1mm
+		] (P-A) ++ (0, -3mm)  to (J);
+
+		\draw [structure, line width=1mm, ->] (J)  to (P-Pt);
+	
+\end{tikzpicture}
+	\end{block}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+
+	\column{0.5\textwidth}
+	\begin{block}{Expiration}
+		\vspace{.25cm}
+
+	\begin{tikzpicture}[
+			scale=.60,
+			every node/.style={transform shape}
+			]
+
+	\pic [name=P, draw=black!50, fill=gray!10] {phasitron-coupe};
+	\pic {venturi-recule};
+
+		\draw [
+			structure,
+			line width=1mm, 
+			->, 
+			out=0, 
+			in=90, 
+			looseness=1.8,
+			] ([yshift=-4mm]P-Pt) to (P-E);
+
+\end{tikzpicture}
+	\end{block}
+\end{columns}

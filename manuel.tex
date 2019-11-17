@@ -1,0 +1,35 @@
+\documentclass[letterpaper]{memoir}
+
+\input{pkg}
+\input{cfg}
+
+\addbibresource{bibliography.bib}
+\def\ie{$i\, \colon e$}
+%\includeonly{chapComposantes}
+
+\title{Manuel de ventilation diffusive - convective}
+\author{Nicolas Blais St-Laurent}
+\date{Septembre 2019}
+
+\begin{document}
+
+\begin{titlingpage}
+\calccentering{\unitlength}
+	\begin{adjustwidth*}{\unitlength}{-\unitlength}
+	\maketitle
+	\end{adjustwidth*}
+\end{titlingpage}
+%\input{titlepage}
+
+\tableofcontents
+
+\include{chapitre1}
+\include{chapComposantes}
+
+%\chapter{Paramètres de ventilation}
+%\chapter{Stratégies de ventilation}
+%\chapter{Surveillance clinique}
+
+\printbibliography
+
+\end{document}

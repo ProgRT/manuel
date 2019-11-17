@@ -1,0 +1,90 @@
+\pgfplotsset{
+	lfhf/.style={
+		height = 0.42 \textheight,
+		enlarge y limits = {value=0.9, upper},
+		enlarge x limits = false
+		}
+}
+\tikzset{
+	zoomline/.style={
+		opacity=1,
+		dotted
+	},
+	plage/.style={
+		<->
+		}
+	}
+
+\def\zstart{7.2}
+\def\zend{7.8}
+\newcommand{\istart}{2}
+\newcommand{\tic}{2}
+\newcommand{\pstart}{7.365}
+\newcommand{\tip}{0.059}
+
+\begin{tikzpicture}
+	\begin{groupplot}[
+			group style={
+				group size=1 by 2,
+				y descriptions at=edge left,
+				xlabels at=edge bottom
+				},
+				ylabel=Pression (hPa),
+				xlabel=Temps (s),
+				max space between ticks=40,
+			]
+		\nextgroupplot[lfhf, width=\textwidth, height=5cm]
+
+		\addplot []table[x=time, y=Pao] {dat/simvent1.dat};
+
+
+		\coordinate (PSO) at (axis cs:\zstart,0);
+		\coordinate (PSE) at (axis cs:\zend,0);
+		\coordinate (PNO) at (axis cs:\zstart,\pgfkeysvalueof{/pgfplots/ymax});
+		\coordinate (PNE) at (axis cs:\zend,\pgfkeysvalueof{/pgfplots/ymax});
+
+		\draw [plage](axis cs:\istart,45) -- (axis cs:\istart + \tic, 45) node[midway, above] {Inspi.};
+		\draw [plage](axis cs:\istart + \tic,45) -- (axis cs:\istart + 2*\tic, 45) node[midway, above] {Expi.};
+
+		\draw [dashed] 
+		(axis cs: \istart,\pgfkeysvalueof{/pgfplots/ymax}) -- (axis cs:\istart,0)
+	 	(axis cs: \istart + \tic,\pgfkeysvalueof{/pgfplots/ymax}) -- (axis cs:\istart + \tic,0)
+		(axis cs: \istart + 2 *\tic,\pgfkeysvalueof{/pgfplots/ymax}) -- (axis cs:\istart + 2*\tic,0);
+
+		%\fill [opacity=0.15] (PSO) rectangle (PNE);
+		\draw [zoomline] (PSO) rectangle (PNE);
+
+
+		\nextgroupplot[lfhf,
+				max space between ticks=80,
+				width=0.75\textwidth,
+				height=5cm,
+				axis background/.style={fill=gray!15, opacity=0.8},
+				]
+		\addplot [restrict x to domain=\zstart:\zend]table[x=time, y=Pao] {dat/simvent1.dat};
+
+		\coordinate (ZNO) at (axis cs:\zstart,\pgfkeysvalueof{/pgfplots/ymax});
+		\coordinate (ZNE) at (axis cs:\zend,\pgfkeysvalueof{/pgfplots/ymax});
+		\coordinate (ZSO) at (axis cs:\zstart,\pgfkeysvalueof{/pgfplots/ymin});
+		\coordinate (ZSE) at (axis cs:\zend,\pgfkeysvalueof{/pgfplots/ymin});
+
+
+		\draw [dashed] 
+		(axis cs: \pstart,\pgfkeysvalueof{/pgfplots/ymax}) -- (axis cs:\pstart,0)
+		(axis cs: \pstart + \tip,\pgfkeysvalueof{/pgfplots/ymax}) -- (axis cs:\pstart + \tip,0)
+		(axis cs: \pstart + 2 *\tip,\pgfkeysvalueof{/pgfplots/ymax}) -- (axis cs:\pstart + 2*\tip,0);
+		\draw [plage] (axis cs:\pstart,45) -- (axis cs:\pstart + \tip, 45) node[midway, above] {Ins.};
+		\draw [plage](axis cs:\pstart + \tip,45) -- (axis cs:\pstart + 2*\tip, 45) node[midway, above] {Exp.};
+
+	\end{groupplot}
+
+	\begin{scope}[on background layer]
+		%\fill [opacity=0.03](ZNO) -- (PNO) -- (PNE) -- (ZNE) -- (ZNO);
+		%\fill [opacity=0.03](ZSO) -- (PSO) -- (PNO) -- (PNE) -- (PSE) -- (ZSE) -- (ZSO);
+		\fill [opacity=0.1](PSO) -- (PNO) -- (PNE) -- (PSE);
+		%\fill [opacity=0.05](ZNE) -- (PNE) -- (PSE) -- (ZSE) -- (ZNE);
+		\draw [zoomline](ZNO) -- (PNO) (PNE) -- (ZNE) ;
+		\draw [zoomline](ZSO) -- (PSO) (PSE) -- (ZSE) ;
+	\end{scope}
+
+\end{tikzpicture}

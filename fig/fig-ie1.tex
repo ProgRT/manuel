@@ -1,0 +1,31 @@
+\def\iehuit{%
+\addplot graphics [
+	xmin=0,
+	ymin=0,
+	xmax=1,
+	ymax=60
+]}
+
+\begin{tikzpicture}
+
+\begin{groupplot}[
+		group style={
+			group size=1 by 2,
+			xlabels at=edge bottom
+		},
+		enlargelimits=false,
+		height=4cm,
+		width=\textwidth,
+		xtick={0, .25, .5, .75, 1},
+		xlabel=Temps (s),
+		ylabel=Pression (hPa)
+]
+
+\nextgroupplot
+\iehuit {img/509.jpg};
+
+\nextgroupplot
+\iehuit{img/828.jpg};
+
+\end{groupplot}
+\end{tikzpicture}

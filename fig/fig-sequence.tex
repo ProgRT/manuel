@@ -1,0 +1,49 @@
+\centering
+\begin{tikzpicture}
+
+	\pic [name=VDR, black!60, scale=0.8] {vdr};
+
+	\begin{scope}[
+		every node/.style={
+			color=black,
+			}
+			]
+	\node (1) at (VDR-e) {1};
+	\node (2) at (VDR-i) {2};
+	\node (3) at (VDR-F) {3};
+	\node (4) at (VDR-O) {4};
+	\node (5) at (VDR-I) {5};
+	\node (6) at (VDR-E) {6};
+	\end{scope}
+
+	\begin{scope}[
+		every node/.style={
+			yshift=8mm,
+			align=center,
+			scale=0.5
+			}
+			]
+	\node at (VDR-e) {RAPPORT\\i/e};
+	\node at (VDR-i) {FREQUENCE\\DE PERCUSSION};
+	\node at (VDR-F) {DEPIT\\PULSE};
+	\node at (VDR-O) {CPAP\\OSCILLANTE};
+	\node at (VDR-I) {TEMPS\\INSPIRATOIRE};
+	\node at (VDR-E) {TEMPS\\EXPIRATOIRE};
+	\end{scope}
+
+	\begin{scope}[
+		every path/.style={
+			black,
+			opacity=0.80,
+			line width=0.7mm,
+			->
+			},
+			]
+	\draw [] (1) to (2);
+	\draw [bend left=27] (2) to (3);
+	\draw [bend left=60] (3) to (4);
+	\draw [bend left=45] (4) to (5);
+	\draw [bend left=45] (5) to (6);
+	\end{scope}
+
+\end{tikzpicture}

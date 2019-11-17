@@ -1,0 +1,62 @@
+\begin{tikzpicture}[
+		cid/.style={
+			above=1.35*\ldist,
+			align=center,
+			font=\tiny
+		},
+		ie/.style={
+			fill=black!15
+		},
+		index/.style={
+			midway,
+			below,
+			inner
+			sep=0,
+			font=\tiny,
+			scale=0.8
+		},
+		aug/.style={
+			midway,
+			above,
+			inner
+			sep=1mm,
+			font=\tiny,
+			scale=0.7
+		},
+		plusmoin/.style={
+			below,
+			inner sep=1mm,
+			font=\tiny,
+			%scale=0.7,
+		},
+		false/.style={
+			draw=red,
+			cross out
+		}
+]
+
+\newcommand{\ldist}{7mm}
+
+	\path (0,0) pic [ie, pic text=i] {aknob} 
+	node [cid] {FREQUENCE\\DE PERCUSSION};
+
+	\draw [->] (0,0) ++(\ldist, \ldist) -- ++(-2*\ldist, 0) 
+	node [index] {$\blacktriangledown$}
+	node [aug] {AUGMENTER}
+	;
+
+	\path (2.5,0) pic [ie, pic text=e] {aknob}
+	node [cid] {RAPPORT\\i/e};
+
+	\draw [<->] (2.5,0) ++(\ldist, -\ldist) 
+	node [plusmoin] {+}
+	-- ++(0, 2*\ldist) 
+	-- ++(-2*\ldist, 0) 
+
+	node [index] {$\blacktriangledown$}
+	-- ++(0, -2*\ldist) 
+	node [plusmoin] {-}
+	node [aug] {}
+	;
+
+\end{tikzpicture}
