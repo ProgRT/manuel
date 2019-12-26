@@ -2,8 +2,9 @@
 
 \section{Module de contrôle}
 
-Le module de contrôle est la composante qui permet de régler les paramètres de la ventilation délivrée par le VDR-4. 
-À partir de son alimentation en gaz à haute pression (air et oxygène), le module de contrôle produit :
+Le module de contrôle est la composante qui permet de régler les paramètres de
+la ventilation délivrée par le VDR-4.  À partir de son alimentation en gaz à
+haute pression (air et oxygène), le module de contrôle produit :
 
 \begin{itemize}
 	\item Un débit intermittent alimentant le phasitron (connecteur et tubulure blanche),
@@ -11,32 +12,62 @@ Le module de contrôle est la composante qui permet de régler les paramètres d
 	\item Un débit auxiliaire (+/- 10 l/min) (ajouté à la sortie du nébuliseur dans le circuit classique) (connecteur et tubulure verte).
 \end{itemize}
 
-Il est aussi doté d’un port de monitorage (connecteur et tubulure rouge). Un multimètre numérique affiche les pressions moyennes (inspiratoire, expiratoire et globale) et les fréquences (percussion et convection). Finalement, le module de contrôle comprend aussi une alarme de déconnection alimentée par une pile.
+Il est aussi doté d’un port de monitorage (connecteur et tubulure rouge). 
+Un multimètre numérique affiche les pressions moyennes (inspiratoire,
+expiratoire et globale) et les fréquences (percussion et convection).
+Finalement, le module de contrôle comprend aussi une alarme de déconnection
+alimentée par une pile.
 
-Le fonctionnement du module de contrôle est exclusivement pneumatique, à l’exception du multimètre et de l’alarme de déconnection. Chaque bouton actionné par l’utilisateur est une valve contrôlant une cartouche pneumatique. 
+Le fonctionnement du module de contrôle est exclusivement pneumatique, à
+l’exception du multimètre et de l’alarme de déconnection.  Chaque bouton
+actionné par l’utilisateur est une valve contrôlant une cartouche pneumatique. 
 
-Le circuit logique du module de contrôle est constitué d’un agencement d’une trentaine de cartouches pneumatiques. Cette conception a pour résultat que plusieurs paramètres réglables s’inter-influencent. Par exemple, une augmentation de l’amplitude des percussions à l’inspiration (bouton DEBIT PULSE) entrainera aussi une augmentation  de l’amplitude des percussions à l’expiration.
-
-\begin{figure}[h]
-	\input{fig/fig-cartouche}
-\caption{Fonctionnement d'une cartouche pneumatique. À mesure que la pression augmente derrière le diaphragme, celui-ci se déforme, emmenant  le piston à obstruer l’arrivée de gaz.}
-\end{figure}
+Le circuit logique du module de contrôle est constitué d’un agencement d’une
+trentaine de cartouches pneumatiques.  Cette conception a pour résultat que
+plusieurs paramètres réglables s’inter-influencent.  Par exemple, une
+augmentation de l’amplitude des percussions à l’inspiration (bouton DEBIT PULSE)
+entrainera aussi une augmentation  de l’amplitude des percussions à
+l’expiration.
 
 %\begin{figure}
 %	\caption{Panneau avant du module de contrôle.}
 %\end{figure}
 
+\begin{figure}[h]
+	\input{fig/fig-cartouche}
+	\caption{Fonctionnement d'une cartouche pneumatique. À mesure que la pression
+	augmente derrière le diaphragme, celui-ci se déforme, emmenant  le piston à
+	obstruer l’arrivée de gaz.} 
+\end{figure}
+
 \section{Phasitron}
-Le phasitron est la composante du circuit de ventilation raccordée directement à l’interface patient (tube endotrachéal, canule de trachéotomie, etc.). Il remplit les deux fonctions suivantes : \begin{itemize}
+
+Le phasitron est la composante du circuit de ventilation raccordée directement à
+l’interface patient (tube endotrachéal, canule de trachéotomie, etc.). Il
+remplit les deux fonctions suivantes : 
+
+\begin{itemize} 
 	\item Amplification du jet de gaz (percussion) en provenance du module de contrôle,
 	\item Valve expiratoire.
 \end{itemize}
 
-L’amplification du jet de gaz se fait par un appel d’air (principe de venturi). Le ratio air aspiré : air injecté du tube de venturi diminue au fur et à mesure que la pression augmente à la sortie de celui-ci. Conçu en tant que mécanisme de protection pulmonaire, cette caractéristique tend à diminuer l’amplitude des variations de pressions de ventilation lors de changement de mécanique pulmonaire.
+L’amplification du jet de gaz se fait par un appel d’air (principe de venturi).
+Le ratio air aspiré : air injecté du tube de venturi diminue au fur et à mesure
+que la pression augmente à la sortie de celui-ci. Conçu en tant que mécanisme de
+protection pulmonaire, cette caractéristique tend à diminuer l’amplitude des
+variations de pressions de ventilation lors de changement de mécanique
+pulmonaire.
 
-Lorsqu’un débit d’air est injecté dans le tube de venturi, il se déplace vers l’avant du phasitron, obstruant ainsi l’orifice expiratoire (voir Figure 6). Lorsque le tube de venturi ne reçoit plus de débit, il retourne à sa position de repos (à l’arrière du phasitron), libérant ainsi l’orifice expiratoire.
+Lorsqu’un débit d’air est injecté dans le tube de venturi, il se déplace vers
+l’avant du phasitron, obstruant ainsi l’orifice expiratoire (voir
+Figure)\todo{Lier à une figure}. Lorsque le tube de venturi ne reçoit plus de
+débit, il retourne à sa position de repos (à l’arrière du phasitron), libérant
+ainsi l’orifice expiratoire.
 
-L’absence de circuit respiratoire entre le phasitron et l’interface patient ainsi que l’utilisation de tubulures peu compliantes entre le phasitron et le module de contrôle évitent l’atténuation des percussions dans le volume compressible du circuit.
+L’absence de circuit respiratoire entre le phasitron et l’interface patient
+ainsi que l’utilisation de tubulures peu compliantes entre le phasitron et le
+module de contrôle évitent l’atténuation des percussions dans le volume
+compressible du circuit.
 
 \begin{figure}
 	\input{fig/fig-phasitron}
@@ -45,12 +76,18 @@ L’absence de circuit respiratoire entre le phasitron et l’interface patient 
 
 \begin{figure}
 	\input{fig/fig-phasitron-coupe}
-	\caption{Fonctionnement du phasitron. Le débit en provenance du module de contrôle déforme le diaphragme et déplace le tube de venturi vers l’avant lors de l’inspiration, obstruant ainsi l’orifice expiratoire. À l’expiration, le diaphragme reprend sa forme initiale et ramène le tube de venturi vers l’arrière, libérant ainsi l’orifice expiratoire.}
+	\caption{Fonctionnement du phasitron. Le débit en provenance du module de
+contrôle déforme le diaphragme et déplace le tube de venturi vers l’avant lors
+de l’inspiration, obstruant ainsi l’orifice expiratoire. À l’expiration, le
+diaphragme reprend sa forme initiale et ramène le tube de venturi vers
+l’arrière, libérant ainsi l’orifice expiratoire.} 
 \end{figure}
 
 \section{Système d’humidification}
 
-Le système d’humidification de base du VDR-4 est un nébuliseur pneumatique. Celui-ci est utilisé pour humidifier les gaz qui sont aspirés par le tube de venturi du phasitron. Le circuit d’humidification est conçu de façon à :
+Le système d’humidification de base du VDR-4 est un nébuliseur pneumatique.
+Celui-ci est utilisé pour humidifier les gaz qui sont aspirés par le tube de
+venturi du phasitron. Le circuit d’humidification est conçu de façon à :
 
 \begin{itemize}
 	\item S’assurer qu’un débit suffisant est disponible à l’orifice d’appel d’air du phasitron,
@@ -58,7 +95,10 @@ Le système d’humidification de base du VDR-4 est un nébuliseur pneumatique. 
 	\item Permettre au patient de respirer facilement l’air ambiant en cas de défaillance de l’appareil.
 \end{itemize}
 
-Plusieurs institutions utilisant le VDR-4 jugent ce système d’humidification insuffisant et le combine ou le remplace par un (ou même deux) humidificateur chauffant (voir Figure 8).
+Plusieurs institutions utilisant le VDR-4 jugent ce système 
+d’humidification insuffisant et le combine ou le remplace par un 
+(ou même deux) humidificateur chauffant (voir Figure \todo{Référencer figure}
+).
 
 %\begin{figure}
 %	\caption{Circuit d'humidification "classique" du VDR-4.}
@@ -70,9 +110,11 @@ Plusieurs institutions utilisant le VDR-4 jugent ce système d’humidification 
 
 \section{Module de monitorage (Monitron)}
 
-Le Monitron est un moniteur électronique complètement indépendant du module de contrôle. Il vise à étendre les capacités de monitorage limitées de celui-ci.
+Le Monitron est un moniteur électronique complètement indépendant du module de
+contrôle. Il vise à étendre les capacités de monitorage limitées de celui-ci.
 
-Le signal de pression est transmis du module de contrôle au Monitron au moyen d’une tubulure se trouvant dans l’espace entre les deux appareils.
+Le signal de pression est transmis du module de contrôle au Monitron au moyen
+d’une tubulure se trouvant dans l’espace entre les deux appareils.
 
 \subsection{Données monitorées}
 
@@ -95,8 +137,11 @@ Les données numériques fournies par le Monitron sont les suivantes :
 
 Une alarme de basse pression et une alarme de haute pression peuvent être ajustées.
 
-L’alarme de haute pression se déclenche dès que la pression lue est supérieure au seuil d’alarme réglé.
+L’alarme de haute pression se déclenche dès que la pression lue est supérieure
+au seuil d’alarme réglé.
 
-L’alarme de pression basse se déclenche lorsque la pression lue est inférieure au seuil d’alarme réglé pour une durée supérieure à 30 secondes.
+L’alarme de pression basse se déclenche lorsque la pression lue est inférieure
+au seuil d’alarme réglé pour une durée supérieure à 30 secondes.
 
-La touche SET ajuste automatiquement l’alarme basse à 2 cmH₂O et l’alarme haute à 10 cmH₂O au-dessus de la pression de crête inspiratoire.
+La touche SET ajuste automatiquement l’alarme basse à 2 cmH₂O et l’alarme haute
+à 10 cmH₂O au-dessus de la pression de crête inspiratoire.
