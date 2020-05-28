@@ -1,0 +1,68 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{titlepage2}[2020/05/22 Personnal title page - second or so version]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Subtitle
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\thesubtitle}{}
+\newcommand{\subtitle}[1]{\renewcommand{\thesubtitle}{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Framed title
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\framedtitle{
+	\@author
+\vskip3pt
+	\rule{\textwidth}{1pt}
+	\vskip 0.5\baselineskip
+	{\Huge\@title}\par
+	{\thesubtitle}
+	\rule{\textwidth}{1pt}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Complete titlepage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\mytitle{
+\framedtitle
+\vfill
+\begin{tikzpicture}[cliphex/.style={clip,rounded corners,}]
+	\draw [cliphex]\hexagon{3cm};
+	\node [yshift=-.5cm, xshift=0cm, scale=0.7]{\includegraphics{fig-pdf/fig-lfhf.pdf}};
+\end{tikzpicture}
+\vfill
+\thedate
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Basic legal notice
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\basiclegallotice{%
+\clearpage
+
+\null\vfill
+\noindent Version 0.1
+
+\noindent \copyright\ \thedate\\
+\@author\\
+Tout droits réservés\pagebreak
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Complete titeling command
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\makeNtitle{%
+\begin{titlingpage}
+\calccentering{\unitlength}
+\begin{adjustwidth*}{\unitlength}{-\unitlength}
+	\centering
+	\mytitle
+\end{adjustwidth*}
+\basiclegallotice
+\end{titlingpage}%
+}

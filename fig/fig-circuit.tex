@@ -1,0 +1,75 @@
+\begin{tikzpicture}[
+	scale=0.15,
+	very thin,
+]
+
+\begin{scope}[
+	every node/.style={
+		transform shape
+	},
+]
+
+\pic [name=F] {fp};
+\pic [name=N] at (15,10) {neb};
+\pic [yscale=1.22, xscale=-1.22, name=P] at (25, 35) {phasitron};
+\pic [scale=1.8, very thin, name=VDR] at (-25,40) {vdr};
+\foreach \x in {1,...,4} {\pic at (VDR-C\x) {connector};}
+
+\pic [name=M] at(N-CR) {manifold};
+\pic  at (M-BC) {bag};
+
+\end{scope}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Hight presure  circuit
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{scope}[
+	every path/.style={
+		double distance=0.4mm,
+	}
+]
+	\draw (VDR-C1)  -| (P-M);
+	\draw (VDR-C2) -- ++(8,0) |- (P-S);
+	\draw (VDR-C4) -- ++(12, 0) -- ++(0, -30) -| (N-CN);
+\end{scope}
+
+\begin{scope}[
+	every node/.style={
+		transform shape
+	},
+]
+
+\pic [yshift=11mm, xscale=-1, name=fsa] at (P-A) {failsafeValve};
+\pic [yshift=11mm, name=fse] at (P-E) {failsafeValve};
+
+\end{scope}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Humidification circuit
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{scope}[
+	every path/.style={
+		double distance=3.8mm,
+		looseness=2,
+		shorten <=-1mm,
+		shorten >=-1mm
+	}
+]
+
+% From the exalation to the manifold
+\draw (fse-CB) to [out=-90, in=0, sloped, sloped, near start]  node {$\rightarrow$} (M-RC);
+
+% From the nebuliser to the FishePaykel
+\draw [double=black!13](N-CL) to [out=180, in=90, sloped, near start]  node {$\leftarrow$} (F-CR);
+
+% From the FisherPaykel to the phasitron
+\draw [double=black!13](F-CL) to [out=90, in=270, sloped] node {$\rightarrow$} (fsa-CB);
+
+\end{scope}
+
+% valves direction
+\node [xscale=-1, font=\tiny] at (fsa-V) {$\mapsto$};
+\node [xscale=-1, font=\tiny] at (fse-V) {$\mapsto$};
+
+\end{tikzpicture}

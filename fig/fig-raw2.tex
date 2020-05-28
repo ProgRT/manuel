@@ -1,6 +1,6 @@
 \centering
 	\begin{tikzpicture}
-		\begin{groupplot} [
+		\begin{groupplot}[
 				group style={
 					group size=2 by 1
 				},
@@ -10,10 +10,10 @@
 					mark=none
 				}
 			]
-			\nextgroupplot +[title=Résistances normales]
-			\addplot table[x=time, y=Pao] {dat/raw5.dat};
+			\nextgroupplot[title=Résistances normales]
+			\addplot table[x=time, y=Pao] {dat/raw6.dat};
 
-		 \nextgroupplot +[title=Résistances augmentées]
-			\addplot table[x=time, y=Pao] {dat/raw15.dat};
+		 \nextgroupplot[title=Résistances augmentées]
+			\addplot table[x=time, y=Pao] {dat/raw9.dat};
 		\end{groupplot}
 	\end{tikzpicture}

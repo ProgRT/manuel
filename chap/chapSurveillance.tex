@@ -1,0 +1,172 @@
+\chapter{Surveillance clinique}
+
+\section{Données monitorées}
+
+On retrouve à la fois des données mesurées sur le multimètre situé sur
+le dessus du module de contrôle et sur le Monitron. Certaines données
+sont même affichées aux deux endroits.
+
+\emph{Il est important de noter que pour l'application du protocole de
+ventilation du CHUM, c'est toujours les pressions affichées sur le
+multimètre du module de contrôle que l'on doit utiliser (moyenne
+inspiratoire et moyenne expiratoire).  Les pressions affichées par le Monitron (PEAK PRESSURE et PEEP/CPAP)
+sont lues à la crête de l'oscillation et sont par conséquent peu
+représentatives des pressions subies par les alvéoles pulmonaires.
+}
+\input{fig/tbl-donnees}
+
+\begin{figure}
+	\input{fig/fig-multimeter}
+	\caption{La pression inspiratoire moyenne et la pression expiratoire moyenne sont affichées sur me multimètre numérique se trouvant sur le dessus du ventilateur.}
+\end{figure}
+
+\section{Monitorage du rapport \ie}
+
+On se rappellera que l'affichage du rapport \ie\ sur le Monitron n'est
+fonctionnel que lorsque le Ti est plus petit que le Te. Lorsque le Ti
+devient plus grand que le Te (rapport inversé), le Monitron affiche en
+permanence 1\string: 1.0.
+
+La meilleure façon de juger du rapport \ie\ est alors d'observer
+l'apparence de la courbe de pression sur le monitron.
+
+Les éléments à observer sont:
+
+\begin{itemize}
+\item
+  Durée du Ti (montée de pression et plateau) versus celle du Te (chute
+  de la pression) (observer à 1 ou 2 s par écran);
+\item
+  Présence d'un plateau. Un plateau où la pression plafonne complètement
+		est suggestif d'un ratio inversé. Voir Figure~\ref{figie1}, courbe du bas.
+  (observer à 1 ou 2 s par écran);
+\item
+  Espace sous la courbe de pression. L'augmentation de l'espace sous la
+  courbe pendant l'inspiration convective est aussi suggestive d'un
+  ratio inversé. Elle témoigne d'une diminution de l'amplitude des
+  percussions. Voir Figure~\ref{figie8}, courbe du bas. (observer à 5 ou 8 s par
+  écran);
+\end{itemize}
+\begin{figure*}
+	\input{fig/fig-ie1}
+	\caption{Rapport \ie\ adéquat (en haut) et rapport \ie\ inversé (en
+	bas). On observe sur le tracé du bas un Te trop court ne permettant pas
+	à la pression de redescendre entre chaque percussion. La pression
+	d'équilibre est donc rapidement atteinte à la percussion suivante. Il en
+	résulte une faible amplitude de variation de pression à chaque
+	percussion. Vitesse de défilement à 1 s par écran.}
+	\label{figie1}
+\end{figure*}
+
+\begin{figure*}
+	\input{fig/fig-ieimg}
+	\caption{Rapport \ie\ adéquat (en haut) et rapport \ie\ inversé (en
+	bas). On observe une diminution de l'amplitude de percussion sur le
+	tracé du bas. Vitesse de défilement à 8 s par écran.}
+	\label{figie8}
+\end{figure*}
+
+\section{Alarme}\index{alarme}
+
+\subsection{Alarmes du module de contrôle}
+
+\subsubsection*{Alarme du mélangeur air-oxygène}
+
+Il s'agit d'une alarme pneumatique se déclenchant lorsque le mélangeur
+perd son alimentation en air ou en oxygène. Il n'y a pas de fonction
+\emph{silence} ou \emph{réarmer~}: l'alarme s'arrête automatiquement
+lorsque l'alimentation des deux gaz est rétablie.
+
+\subsubsection{Alarme de surpression}\index{alarme!de surpression}
+
+Il s'agit d'une alarme pneumatique se déclenchant lors d'une surpression
+dans le module de contrôle. Son déclenchement entraine une chute de la
+pression délivrée. Une fois la cause corrigée, il faut réarmer l'alarme
+(bouton poussoir rouge) pour que la ventilation reprenne normalement.
+
+Au réglage le plus sensible (rotation en sens antihoraire) l'alarme se
+déclenche lorsque la pression dans le circuit avoisine les 80 $cmH_2O$.
+
+Lorsque cette alarme se déclenche, il faut en premier lieu suspecter un
+réglage inadéquat (par exemple fonction \emph{PRESSION DE CONVECTION} ou
+\emph{PEP non oscillante} activées ou fréquence de percussion inférieure
+à 100) ou une tubulure blanche coincée.
+
+Il est improbable qu'une condition clinique (par exemple toux ou
+résistances augmentées) entraine l'activation de cette alarme.
+
+\subsubsection{Alarme de déconnexion}
+\index{alarme!de déconnexion}
+
+Il s'agit d'un module indépendant situé sur le côté de l'appareil et
+alimenté par une batterie. Cette alarme se déclenche lorsqu'aucune
+pression n'est détectée dans le circuit pour une période donnée. Cette
+période peut (en théorie\ldots{}) être ajustée au moyen de la roulette
+noire.
+
+\subsection{Alarmes du Monitron}
+
+\subsubsection*{Alarme de pression haute}%
+
+Cette alarme se déclenche dès que la pression dans le circuit est
+supérieure à la limite réglée. La valeur du réglage est indiquée par une
+ligne rouge dans la zone de graphiques.
+
+Son réglage répond même logique que l'alarme de pression haute en
+ventilation conventionnelle (par exemple 10 $cmH_2O$ de plus que la
+pression de crête actuelle). Il faut cependant se rappeler que le
+déclenchement de l'alarme n'interrompt pas la ventilation étant donné
+que le Monitron et le module de contrôle sons indépendants l'un de
+l'autre.
+
+\subsubsection*{Alarme de pression basse}
+
+Cette alarme s'active lorsque la pression dans le circuit est inférieure
+au seuil réglé pour plus de 6 s (alarme visuelle) et 12 s (alarme
+sonore).
+
+Il est à noter qu'une fois la pression rétablie, l'alarme continue à
+sonner tant qu'elle n'a pas été réarmée.
+
+\section{Situations particulières}
+
+\subsection{Obstruction de la sonde}\index{obstruction!de la sonde s'intubation}
+
+Étant donné l’absence de monitorage du débit, il est nécessaire de faire preuve
+d’une vigilance accrue afin de détecter cette complication. Une obstruction
+importante de la sonde peut se manifester par :
+		
+\begin{itemize}
+	\item Une augmentation des pressions de ventilation en l’absence de
+	modification des réglages. L’augmentation de la pression à l’inspiration se
+	fera de façon plus abrupte, 
+	\item Une détérioration des échanges gazeux.
+\end{itemize}
+
+La perméabilité de la sonde peut être évaluée en y descendant un cathéter
+d’aspiration, que ce soit en cas de doute ou sur une base régulière.  Si
+l’abondance des sécrétions est problématique, le ballonnet du tube endotrachéal
+peut être partiellement dégonflé pour permettre à celles-ci de remonter dans
+l’oropharynx du patient. L’amplitude des percussions devra alors être réajustée
+à la hausse pour compenser la fuite créée.
+
+\begin{figure}
+\input{fig/fig-raw.tex}
+\caption{Modification de l'apparence de la courbe de pression suite à une
+augmentation des résistances. Lorsque les résistances sont normales (à gauche),
+on observe une augmentation graduelle des pressions lors de l’inspiration.
+Cette augmentation correspond à l’augmentation de la pression alvéolaire.
+Lorsque les résistances sont élevées, les pressions sont élevées dès le début
+de l’inspiration et restent stable au cours de celle-ci.}
+\index{résistances!augmentées}
+\end{figure}
+
+\subsection{Fuite ou déconnexion}\index{fuite}\index{déconnexion}
+
+Une fuite entre le phasitron et le patient ou au niveau du tube endotrachéal se
+manifestera par une diminution des pressions mesurées en l’absence de
+modification des réglages. La courbe de pression aura une apparence atténuée.
+Une fuite dans le circuit d’humidification n’aura pas d’influence sur les
+pressions de ventilations. Elle pourra, par contre, modifier la concentration
+en oxygène du mélange gazeux administré au patient (appel d’air ambiant),
+entrainant une hypoxémie+.

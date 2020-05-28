@@ -1,0 +1,186 @@
+\def\knobshow#1{%
+\marginpar{%
+	\centering
+	\begin{tikzpicture}
+\pic [pic text=#1, scale=1.5] {aknob};
+\end{tikzpicture}%
+}}
+
+\chapter{Paramètres de ventilation}
+
+Le réglage des paramètres de ventilation se fait en ajustant l’ouverture de
+valves sur le module de contrôle. Les valves du module de contrôle sont
+identifiées par le principal paramètre visé par le réglage. Cependant, le
+réglage de l’ouverture d’une valve entraine presque toujours la modification
+d’au moins deux paramètres. Un code de couleurs identifie les valves en
+fonction du type de paramètre visé par son réglage.  
+
+\section{Paramètres d’amplitude}
+
+Une amplitude de percussion différente peut être réglée pour chacune des trois
+phases du cycle de convection (basse fréquence).  Ces trois réglages sont
+identifiés par la couleur verte sur le module de contrôle. 
+
+\subsection{Amplitude des percussions à l’inspiration (phase haute)}
+
+Il s’agit du paramètre de base à partir duquel sont réglés les deux autres
+paramètres d’amplitude. Cela signifie qu’une modification de ce paramètre
+entrainera une modification dans la même direction des deux autres amplitudes.
+Cette amplitude est réglée au moyen de la valve identifiée Debit pulse.
+\knobshow{D}
+
+\subsection{Amplitude des percussions à l’expiration (phase basse)}
+
+L’amplitude des percussions pendant l’expiration convective est réglée par
+comparaison à celle pendant l’inspiration convective. Cela signifie qu’une
+modification de l’amplitude à l’inspiration entrainera une modification de
+l’amplitude à l’expiration. Par contre, l’amplitude à l’inspiration ne sera pas
+affectée par une modification de celle à l’expiration. Cette amplitude est
+réglée au moyen de la valve identifiée CPAP oscillante.
+\knobshow{O}
+
+\subsection{Amplitude de percussion augmentée (troisième phase)}
+
+Lorsqu’elle est activée, la troisième phase commence 0,8 seconde après le début
+de l’inspiration convective (voir Figure 10). Il en résulte une inspiration en
+deux temps. Cette amplitude est réglée au moyen de la valve identifiée pression
+de convection. Ce paramètre n’est pas utilisé dans le protocole clinique en
+vigueur au CHUM.
+\knobshow{C}
+
+\begin{figure}
+\caption{Tracé de la pression à l'ouverture des voies aériennes. On peut
+observer une augmentation de la pression 0.8 secondes après le début de
+l’inspiration.}
+\end{figure}
+
+\begin{table}
+	\begin{tabular}{l l}
+		\hline
+		Paramètre & Désignation sur l’appareil\\
+		\hline
+		Amplitude à l’inspiration (phase haute) & DEBIT PULSE\\
+		Amplitude à l’expiration (phase basse) & CPAP OSCILLANTE\\
+		Amplitude augmentée (troisième phase) & PRESSION DE CONVECTION\\
+\hline
+	\end{tabular}
+	\caption{Désignation des contrôles relatifs à l'amplitude de percussion.}
+\end{table}
+
+\section{Paramètres de cyclage à haute fréquence}
+
+Les valves contrôlant le cyclage à haute fréquence sont identifiées par la
+couleur grise sur le module de contrôle.  Bien que les deux boutons permettant
+de régler le cyclage à haute fréquence soient désignés «FRÉQUENCE DE
+PERCUSSION» et «RATIO i:e» sur l’appareil, il s’avère que chacun de ces deux
+\knobshow{i}
+réglages influence la fréquence.  En fait, le bouton «FRÉQUENCE» modifie le
+temps inspiratoire des percussions sans modifier le ratio i:e. Il en résulte
+donc une modification de la fréquence avec un ratio i:e constant.  Quant au
+bouton « RATIO i:e » il ajuste le ratio i:e sans modifier le temps
+inspiratoire. Il en résulte qu’une modification du ratio i:e modifie aussi la
+fréquence de percussion.
+\knobshow{e}
+
+\section{Paramètres de cyclage à basse fréquence}
+
+Le cyclage à basse fréquence se règle en ajustant un temps inspiratoire et un
+temps expiratoire.  La fréquence et le ratio inspiration : expiration
+résulteront des temps inspiratoire et expiratoire réglés. Les valves contrôlant
+le cyclage à basse fréquence sont identifiées par la couleur noire sur le
+module de contrôle.
+
+\section{PEP non oscillante}
+
+La fonction PEP non oscillante (DEMAND CPAP / PEEP) est identifiée par un
+bouton de couleur jaune.  Cette fonction est destinée à réduire le travail
+respiratoire lors d’essai de respiration spontanée. Elle est généralement
+désactivée lors de la percussion. Lorsqu’elle est activée, un débit continu est
+injecté dans le phasitron. Ce débit, qui sera amplifié par le phasitron,
+facilite l’inspiration et maintient une pression positive à l’expiration (en
+maintenant le tube de venturi en position partiellement avancée).  
+
+\section{Autres paramètres}
+
+\subsection{Pression de travail}
+
+La pression de travail est la pression à laquelle les gaz entrent dans le
+circuit de logique pneumatique. Celle-ci influence à la fois l’amplitude des
+percussions et les paramètres de cyclage. Chez l’adulte, on utilise
+généralement la pression la plus élevée pouvant être atteinte (plus ou moins 40
+lbs/po², selon la source d’alimentation en gaz pressurisé).
+
+
+\subsection{Nébulisation}
+
+Active ou désactive le débit destiné à actionner le nébuliseur (plus ou moins
+20 l/min). Actif même lorsque la percussion est arrêtée. 
+
+\subsection{Marche arrêt}
+
+S’applique à la percussion seulement. Toutes les autres fonctions
+(nébulisation, PEP non percussive, monitorage) demeurent actives.
+
+\section{Interactions des paramètres}
+
+Pour faire une règle simple, on peut dire, sans trop exagérer, que n’importe
+quel paramètre peut potentiellement influencer n’importe quel autre paramètre. 
+
+\subsection{Paramètres influençant le cyclage}
+
+Étant donné que l’alternance entre les inspirations et les expirations des
+percussions (cyclage haute fréquence)  est contrôlé par des cartouches
+pneumatiques, tout paramètre influençant la pression disponible pour actionner
+les cartouches peut influencer la fréquence des percussions et leur ratio i:e.
+Parmi ces paramètres, on compte entre autres :
+
+\begin{itemize}
+\item La pression de travail, 
+\item La \fio, 
+\item Le réglage d’amplitude des percussions (DEBIT PULSE).
+\end{itemize}
+
+Le même principe s’applique au cyclage à basse fréquence (temps inspiratoire et
+expiratoire convectif).
+
+\subsection{Influence du ratio i:e des percussions sur les pressions de ventilation}
+
+Le ratio inspiration : expiration (i:e) des percussions a une grande influence
+sur les pressions de ventilation. Plus le ratio i:e est élevé, plus les
+pressions serons élevées.
+
+\section{Séquence des réglages}
+
+\begin{figure*}
+	\input{fig/fig-sequence}
+	\caption{Séquence de réglage des paramètres.}
+\end{figure*}
+
+En raison des interactions entre les différents réglages, il est
+judicieux de régler en premier les paramètres ayant beaucoup d'influence
+sur les autres réglages, ou influençant plusieurs autres réglages.
+
+Ainsi, avant d'effectuer quelque réglage que ce soit, on s'assurera que
+la pression de travail est réglée à 40 lb/po\textsuperscript{2} et que la nébulisation est
+en fonction. On s'assurera aussi que la PEP non oscillante et
+l'augmentation des pressions de convection (3\textsuperscript{e} phase) sont désactivées
+(tourné complètement en sens horaire).
+
+Ensuite, étant donné que le rapport \ie\ des percussions (haute
+fréquence) influence à la fois la fréquence de percussion et l'amplitude
+des percussions (donc les pressions de ventilation), il est judicieux
+d'ajuster ce paramètre en tout premier lieu.
+
+Une fois le rapport \ie\ des percussions ajusté,~le temps inspiratoire
+des percussions peut être ajusté à n'importe quel moment pour régler la
+fréquence de percussion.
+
+Pour les paramètres d'amplitude de percussion, l'amplitude des
+percussions pendant l'inspiration influence celle pendant l'expiration.
+Il convient donc de toujours ajuster la pression inspiratoire avant la
+pression expiratoire.
+
+Finalement, les pressions de ventilation ayant une influence sur le
+temps inspiratoire et expiratoire de la convection (basse fréquence),
+on attendra d'avoir ajusté les pressions de ventilation avant de régler
+avec précision ces deux paramètres.

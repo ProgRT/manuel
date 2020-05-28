@@ -1,18 +1,26 @@
-%\usepackage[T1]{fontenc}
-%\usepackage[utf8]{inputenc}
-\usepackage[francais]{babel}
-
-%\usepackage{geometry}
-%\usepackage{polyglossia}
-\usepackage[color=yellow!30, linecolor=black, shadow]{todonotes}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage[color=yellow!30, linecolor=black, shadow, obeyFinal]{todonotes}
 \usepackage{pgfplots}
-\usepackage{tikz}
 \usepackage{vdr}
 \usepackage{palettechum}
 \usepackage{logovdr}
 \usepackage{logochum}
-%\usepackage{ntitlepage}
-\usepackage{biblatex}
+\usepackage{hexagon}
+\usepackage[url=false]{biblatex}
+\usepackage{makeidx}
+\usepackage[hidelinks]{hyperref}
+\usepackage{titlepage2}
 
 \usetikzlibrary{backgrounds}
 \usepgfplotslibrary{groupplots}
+\usetikzlibrary{external}
+\tikzexternalize[shell escape=-shell-escape]
+\tikzsetexternalprefix{fig-pdf/}
+
+\setlength{\parskip}{.7em}
+\def\arraystretch{1.5}
+\setcounter{tocdepth}{1}
+
+\DefineBibliographyStrings{french}{in={dans}}

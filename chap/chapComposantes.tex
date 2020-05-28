@@ -41,6 +41,7 @@ l’expiration.
 \end{figure}
 
 \section{Phasitron}
+\index{phasitron}
 
 Le phasitron est la composante du circuit de ventilation raccordée directement à
 l’interface patient (tube endotrachéal, canule de trachéotomie, etc.). Il
@@ -60,7 +61,7 @@ pulmonaire.
 
 Lorsqu’un débit d’air est injecté dans le tube de venturi, il se déplace vers
 l’avant du phasitron, obstruant ainsi l’orifice expiratoire (voir
-Figure)\todo{Lier à une figure}. Lorsque le tube de venturi ne reçoit plus de
+Figure \ref{fig:phasitron-coupe}). Lorsque le tube de venturi ne reçoit plus de
 débit, il retourne à sa position de repos (à l’arrière du phasitron), libérant
 ainsi l’orifice expiratoire.
 
@@ -81,6 +82,7 @@ contrôle déforme le diaphragme et déplace le tube de venturi vers l’avant l
 de l’inspiration, obstruant ainsi l’orifice expiratoire. À l’expiration, le
 diaphragme reprend sa forme initiale et ramène le tube de venturi vers
 l’arrière, libérant ainsi l’orifice expiratoire.} 
+	\label{fig:phasitron-coupe}
 \end{figure}
 
 \section{Système d’humidification}
@@ -97,16 +99,17 @@ venturi du phasitron. Le circuit d’humidification est conçu de façon à :
 
 Plusieurs institutions utilisant le VDR-4 jugent ce système 
 d’humidification insuffisant et le combine ou le remplace par un 
-(ou même deux) humidificateur chauffant (voir Figure \todo{Référencer figure}
-).
+(ou même deux) humidificateur chauffant (voir Figure \ref{fig:circuit}).
 
 %\begin{figure}
 %	\caption{Circuit d'humidification "classique" du VDR-4.}
 %\end{figure}
 
-%\begin{figure}
-%	\caption{Intégration d'un humidificateur chauffant au circuit du VDR-4.}
-%\end{figure}
+\begin{figure}
+	\input{fig/fig-circuit.tex}
+	\label{fig:circuit}
+	\caption{Intégration d'un humidificateur chauffant au circuit du VDR-4.}
+\end{figure}
 
 \section{Module de monitorage (Monitron)}
 
