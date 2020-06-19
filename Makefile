@@ -22,10 +22,10 @@ mono: img/*-mono.jpg
 
 clean:
 	latexmk -c -silent
-	rm -f *.dvi
 	cd chap && latexmk -c -silent
 
 cleanall: clean
+	rm -f *.dvi
 	rm -f *.auxlock *.bbl *.run.xml
 
 manuel.bbl:
