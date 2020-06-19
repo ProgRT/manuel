@@ -1,0 +1,17 @@
+\newcounter{exercice}[chapter]
+\newenvironment{exercice}
+{\refstepcounter{exercice}\begin{shaded}
+	\textbf{Exercice \thechapter.\theexercice}}
+{\end{shaded}}
+
+\newcommand{\exsection}[1]{\vskip8pt\par \textbf{\small #1:}\par}
+
+\newenvironment{materiel}
+{\exsection{Matériel requis}
+\begin{itemize}}
+{\end{itemize}}
+
+\newenvironment{procedure}
+{\exsection{Procédure}
+\begin{enumerate}}
+{\end{enumerate}}

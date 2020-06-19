@@ -2,17 +2,21 @@
 \newcommand{\pins}{18}
 \newcommand{\arrpos}{1.06}
 \begin{tikzpicture}[
+		pressmark/.style={
+			draw=gray,
+			dashed,
+		},
 		pline/.style={
+			pressmark,
 			help lines,
-			turquoisechum,
 			rounded corners,
 			out=0,
 			in=180,
 			thick
 			},
-		p/.style={
+		pcircle/.style={
+			pressmark,
 			circle,
-			draw=turquoisechum,
 			inner sep=0.5mm,
 			thick
 			}
@@ -20,6 +24,7 @@
 
 	\begin{axis}[
 		width=0.65\textwidth,
+		height=6cm,
 		name=plot,
 		font=\scriptsize,
 		try min ticks=6,
@@ -27,16 +32,16 @@
 		ytick={0,30},
 		axis x line=bottom,
 		axis y line=middle,
-		enlarge y limits={value=0.25, upper},
+		enlarge y limits={value=0.1, upper},
 		enlarge x limits={value=0.05, upper},
 		extra y ticks={5, 18},
 		extra y tick labels={$P_{ins. moy.}$, $P_{exp. moy.}$},
 		extra y tick style={grid=major},
-		major grid style={turquoisechum, thick}
+		major grid style={pressmark, thick}
 		]
 
 		\addplot [
-			bleufoncechum,
+			black,
 			restrict x to domain=0:8,
 			] table[x=time, y=Pao] {dat/f300.dat};
 
@@ -45,7 +50,7 @@
 
 	\end{axis}
 
-	\pic [opacity=0.99, name=mm] at ([xshift=3.2cm, yshift=-.95cm]plot.east) {multimeter};
+	\pic [opacity=0.99, name=mm] at ([xshift=3.2cm, yshift=0cm]plot.east) {multimeter};
 
 		\node [grad] (mmg50) at (mmscreen.north west) {50};
 		\node [grad] (mmg0) at (mmscreen.south west) {0};
@@ -53,11 +58,8 @@
 
 		\node [below, white, align=left, font=\tiny] at (mmscreen.south) {Percussionaire\\Corporation};
 
-	\node [p] (pmi) at (mmPmi) {\pins};
-	\node [p] (pme) at (mmPme) {\pexp};
-
-	%\draw [pline] (D) -- ([xshift=4mm]D) |- (pmi);
-	%\draw [pline] (B) -- ([xshift=5mm]B) |- (pme);
+	\node [pcircle] (pmi) at (mmPmi) {\pins};
+	\node [pcircle] (pme) at (mmPme) {\pexp};
 
 	\draw [pline] (D) to (pmi);
 	\draw [pline] (B) to (pme);

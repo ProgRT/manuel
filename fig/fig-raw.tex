@@ -2,18 +2,22 @@
 	\begin{tikzpicture}
 		\begin{groupplot} [
 				group style={
-					group size=2 by 1
+					group size=2 by 1,
+					ylabels at=edge left,
 				},
-				width=0.48\textwidth,
+				ylabel=$P_{circ.} (hPa)$,
+				xlabel=Temps (s),
+				width=0.5\textwidth,
 				restrict x to domain=1.5:4,
+				ymax=40,
 				every axis plot post/.style={
 					mark=none
 				}
 			]
-			\nextgroupplot +[title=Résistances normales]
-			\addplot table[x=time, y=Pao] {dat/raw5.dat};
+			\nextgroupplot [title=Résistances normales]
+			\addplot [] table[x=time, y=Pao] {dat/raw5.dat};
 
-		 \nextgroupplot +[title=Résistances augmentées]
-			\addplot table[x=time, y=Pao] {dat/raw15.dat};
+		 \nextgroupplot [title=Résistances augmentées]
+			\addplot [] table[x=time, y=Pao] {dat/raw15.dat};
 		\end{groupplot}
 	\end{tikzpicture}
