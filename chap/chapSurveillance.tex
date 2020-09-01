@@ -17,15 +17,15 @@ représentatives des pressions subies par les alvéoles pulmonaires.
 
 \begin{figure}
 	\input{fig/fig-multimeter}
-	\caption{La pression inspiratoire moyenne et la pression expiratoire moyenne sont affichées sur me multimètre numérique se trouvant sur le dessus du ventilateur.}
+	\caption[Pressions affichées sur le multimètre numérique]{La pression inspiratoire moyenne et la pression expiratoire moyenne sont affichées sur me multimètre numérique se trouvant sur le dessus du ventilateur.}
 \end{figure}
 
 \section{Monitorage du rapport \ie}
 
-On se rappellera que l'affichage du rapport \ie\ sur le Monitron n'est
-fonctionnel que lorsque le Ti est plus petit que le Te. Lorsque le Ti
-devient plus grand que le Te (rapport inversé), le Monitron affiche en
-permanence 1\string: 1.0.
+Il est important de savoir que l'affichage du rapport \ie\ sur le
+Monitron n'est fonctionnel que lorsque le Ti est plus petit que le Te.
+Lorsque le Ti devient plus grand que le Te (rapport inversé), le
+Monitron affiche en permanence 1\string: 1.0.
 
 La meilleure façon de juger du rapport \ie\ est alors d'observer
 l'apparence de la courbe de pression sur le monitron.
@@ -49,7 +49,7 @@ Les éléments à observer sont:
 \end{itemize}
 \begin{figure*}
 	\input{fig/fig-ie1}
-	\caption{Rapport \ie\ adéquat (en haut) et rapport \ie\ inversé (en
+	\caption[Rapport \ie\ adéquat et inversé (1 s par écran)]{Rapport \ie\ adéquat (en haut) et rapport \ie\ inversé (en
 	bas). On observe sur le tracé du bas un Te trop court ne permettant pas
 	à la pression de redescendre entre chaque percussion. La pression
 	d'équilibre est donc rapidement atteinte à la percussion suivante. Il en
@@ -57,7 +57,7 @@ Les éléments à observer sont:
 	percussion. Vitesse de défilement à 1 s par écran.}
 	\label{figie1}
 	\input{fig/fig-ieimg}
-	\caption{Rapport \ie\ adéquat (en haut) et rapport \ie\ inversé (en
+	\caption[Rapport \ie\ adéquat et inversé (8 s par écran)]{Rapport \ie\ adéquat (en haut) et rapport \ie\ inversé (en
 	bas). On observe une diminution de l'amplitude de percussion sur le
 	tracé du bas. Vitesse de défilement à 8 s par écran.}
 	\label{figie8}
@@ -75,7 +75,14 @@ perd son alimentation en air ou en oxygène. Il n'y a pas de fonction
 lorsque l'alimentation des deux gaz est rétablie.
 
 \subsubsection{Alarme de surpression}\index{alarme!de surpression}
-
+\knobshow{{}{ALARME DE\\SURPRESSION}}
+\marginpar{%
+	\centering
+	\vspace{\baselineskip}
+	\begin{tikzpicture}
+		\pic [] (PB){pushbutton};
+		\node [align=center, font=\scriptsize] at(1,0)  {REMISE\\À ZÉRO};
+	\end{tikzpicture}}
 Il s'agit d'une alarme pneumatique se déclenchant lors d'une surpression
 dans le module de contrôle. Son déclenchement entraine une chute de la
 pression délivrée. Une fois la cause corrigée, il faut réarmer l'alarme
@@ -149,7 +156,8 @@ l'oropharynx du patient. L'amplitude des percussions devra alors être réajust�
 
 \begin{figure}
 \input{fig/fig-raw.tex}
-\caption{Modification de l'apparence de la courbe de pression suite à une
+	\caption[Modification de l'apparence de la courbe de pression suite à une
+	augmentation des résistances.]{Modification de l'apparence de la courbe de pression suite à une
 augmentation des résistances. Lorsque les résistances sont normales (à gauche),
 on observe une augmentation graduelle des pressions lors de l'inspiration.
 Cette augmentation correspond à l'augmentation de la pression alvéolaire.

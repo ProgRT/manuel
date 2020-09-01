@@ -1,7 +1,10 @@
 \newcounter{exercice}[chapter]
-\newenvironment{exercice}
+\newlistof{listofexercices}{exr}{Liste des exercices}
+\newenvironment{exercice}[1][]
 {\refstepcounter{exercice}\begin{shaded}
-	\textbf{Exercice \thechapter.\theexercice}}
+	\textbf{Exercice \thechapter.\theexercice\hspace{1em}-\hspace{1em}#1}
+	\addcontentsline{exr}{figure}{\protect\numberline{\thechapter.\theexercice}#1}\par
+	}
 {\end{shaded}}
 
 \newcommand{\exsection}[1]{\vskip8pt\par \textbf{\small #1:}\par}

@@ -1,7 +1,6 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[french]{babel}
-\usepackage[color=yellow!30, linecolor=black, shadow, obeyFinal]{todonotes}
 \usepackage{pgfplots}
 \usepackage{vdr}
 \usepackage{palettechum}
@@ -10,7 +9,7 @@
 \usepackage{hexagon}
 \usepackage[url=false]{biblatex}
 \usepackage{makeidx}
-\usepackage[hidelinks]{hyperref}
+\usepackage[hidelinks, pdfencoding=unicode]{hyperref}
 \usepackage{pkg/titlepage2}
 \usepackage{pkg/exercice}
 
@@ -23,6 +22,8 @@
 \setlength{\parskip}{.7em}
 \def\arraystretch{1.5}
 \setcounter{tocdepth}{1}
+\setsecnumdepth{subsection}
 \definecolor{shadecolor}{gray}{0.85}
 
 \DefineBibliographyStrings{french}{in={dans}}
+\AtBeginDocument{\renewcommand{\listfigurename}{Liste des figures}}

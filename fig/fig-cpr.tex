@@ -1,0 +1,25 @@
+\centering
+	\begin{tikzpicture}
+		\begin{groupplot} [
+				group style={
+					group size=2 by 1,
+					ylabels at=edge left,
+				},
+				ylabel=$P_{circ.} (hPa)$,
+				xlabel=Temps (s),
+				width=0.5\textwidth,
+				%restrict x to domain=0:5,
+				%ymax=40,
+				every axis plot post/.style={
+					mark=none,
+					ultra thin
+				}
+			]
+			\nextgroupplot [title=A]
+			\addplot [] table[y index=0, x expr={(\coordindex/512)}] {dat/nocpr.dat};
+
+		 \nextgroupplot [title=B]
+			\addplot [] table[y index=0, x expr={(\coordindex/512)}]
+			{dat/cpron.dat};
+		\end{groupplot}
+	\end{tikzpicture}

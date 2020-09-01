@@ -6,7 +6,7 @@
 			shorten >=1mm, 
 			shorten <=1mm, 
 			font=\small,
-			vertvdr!60
+			%vertvdr!60
 		},
 		cid/.style={
 			above=1.35*\ldist,
@@ -14,11 +14,13 @@
 			font=\tiny
 		},
 		ampl/.style={
-			fill=vertvdr!72
+			%fill=vertvdr!72
+			%fill=black!65,
+			%text=white,
 		},
 		marker/.style={
 			line width=0.3mm,
-			vertvdr!60
+			%vertvdr!60
 		},
 		index/.style={
 			midway,
@@ -38,7 +40,7 @@
 		}
 ]
 
-\colorlet{vertvdr}{green!50!black}
+\colorlet{vertvdr}{green!35!black}
 
 \newcommand{\pexp}{9.5}
 \newcommand{\pins}{35.5}
@@ -47,7 +49,8 @@
 \newcommand{\ldist}{7mm}
 
 	\begin{axis} [
-			height=0.80\textheight,
+			height=0.40\textheight,
+			width=\textwidth,
 			xtick={0,2,4},
 			axis x line=bottom,
 			axis y line=left,
@@ -58,6 +61,7 @@
 		\addplot [
 			restrict x to domain=0:6,
 			thin,
+			black!60,
 			]table[x=time, y=Pao] {dat/simvent1.dat};
 
 		\coordinate (A) at (axis cs:1.445,0.1);
