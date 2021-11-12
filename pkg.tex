@@ -1,29 +1,94 @@
+%%%%%%%%%%%%%%%%%%%%%%
+% Packages and library
+%%%%%%%%%%%%%%%%%%%%%%
+
+% Langue
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[french]{babel}
+
+% Mise en page
 \usepackage{pgfplots}
-\usepackage{vdr}
-\usepackage{palettechum}
+\usepackage{pdfpages}
+\usepackage{amsmath}
+\usepackage{makeidx}
+\usepackage{geometry}
+\usepackage{caption}
+\usepackage{framed}
+\usepackage{marginnote}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{tocloft}
+\usepackage[url=false]{biblatex}
+\usepackage[outercaption, wide]{sidecap}
+\usepackage[framed]{ntheorem}
+\usepackage[nobottomtitles]{titlesec}
+
+% Paquets personnels
+
 \usepackage{logovdr}
 \usepackage{logochum}
 \usepackage{hexagon}
-\usepackage[url=false]{biblatex}
-\usepackage{makeidx}
-\usepackage[hidelinks, pdfencoding=unicode]{hyperref}
+\usepackage{vdr}
+\usepackage{horaire}
 \usepackage{pkg/titlepage2}
 \usepackage{pkg/exercice}
 
+% Librairies
+
 \usetikzlibrary{backgrounds}
-\usepgfplotslibrary{groupplots}
 \usetikzlibrary{external}
-\tikzexternalize[shell escape=-shell-escape]
+\usetikzlibrary{positioning}
+\usetikzlibrary{matrix}
+\usepgfplotslibrary{groupplots}
+
+%%%%%%%%%%%%%%%%%%%%%%
+% Configurations
+%%%%%%%%%%%%%%%%%%%%%%
+
+\hypersetup{
+	hidelinks,
+	pdfencoding=unicode
+}
+
+\geometry{
+	includeall,
+	margin=0.8in,
+	marginparwidth=2.5in,
+	marginparsep=0.3in
+}
+\pretolerance=1000
+
+% Headder and footer
+\def\headrulewidth{0pt}
+\pagestyle{fancy}
+\addtolength{\headwidth}{\marginparwidth}
+\addtolength{\headwidth}{\marginparsep}
+
+%\tikzexternalize[shell escape=-shell-escape]
 \tikzsetexternalprefix{fig-pdf/}
 
 \setlength{\parskip}{.7em}
 \def\arraystretch{1.5}
 \setcounter{tocdepth}{1}
-\setsecnumdepth{subsection}
+%\setsecnumdepth{subsection}
 \definecolor{shadecolor}{gray}{0.85}
 
 \DefineBibliographyStrings{french}{in={dans}}
 \AtBeginDocument{\renewcommand{\listfigurename}{Liste des figures}}
+
+\def\knobshow#1{%
+	\marginpar{%
+		\centering
+		\begin{tikzpicture} \pic [scale=1.5] {labeleb=#1}; \end{tikzpicture}}}
+
+\def\param#1{{\small \uppercase{#1}}}
+
+%%%%%%%%%
+% Macro
+%%%%%%%%%
+
+\def\protochum#1{#1 \logochum[height=11pt]}
+
+\theoremstyle{nonumberbreak}
+\newframedtheorem{auchum}{Au CHUM...}

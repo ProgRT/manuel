@@ -4,7 +4,7 @@ NOIDX = -e '/makeindex/d'
 
 .PHONY: clean title
 
-manuel.pdf: manuel.tex chap/*.tex pkg.tex fig/fig-*.tex pkg/*.sty manuel.bbl
+manuel.pdf: manuel.tex chap/*.tex pkg.tex fig/fig-*.tex fig/tbl-*.tex exr/exr*.tex pkg/*.sty manuel.bbl
 	${LTX} manuel.tex
 
 titletest.pdf: titletest.tex titlepage2.tex framedtitle.tex

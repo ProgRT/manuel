@@ -2,12 +2,13 @@
 	\begin{tikzpicture}
 		\begin{groupplot} [
 				group style={
-					group size=2 by 1,
+					group size=1 by 2,
 					ylabels at=edge left,
+					xlabels at=edge bottom,
 				},
 				ylabel=$P_{circ.} (hPa)$,
 				xlabel=Temps (s),
-				width=0.5\textwidth,
+				width=\marginparwidth,
 				restrict x to domain=1.5:4,
 				ymax=40,
 				every axis plot post/.style={

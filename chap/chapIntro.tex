@@ -56,9 +56,9 @@ gaz carbonique.
 Ce qui limite les volumes courants en ventilation à haute fréquence est le peu
 de temps disponible pour chaque cycle respiratoire. Ce temps est d'autant plus
 court que la fréquence est élevée. 
-
-$$ {T_{cycle}}_{(s)} = \frac{60}{Freq._{(cycle/min)}}$$
-
+\marginpar{%
+$$ {T_{cycle}}{(s)} = \frac{60}{Freq{(/m)}}$$%
+}
 En conséquence, une diminution de la fréquence entrainera une augmentation du
 volume courant en laissant plus de temps à la pression pour s'équilibrer entre
 le circuit et les alvéoles. Inversement, une augmentation de la fréquence
@@ -81,7 +81,8 @@ déplacement de grands volumes d'air (convection) et de l'ensemle de
 mécanismes d'échanges gazeux propres à la ventilation à haute
 fréquence.
 
-\begin{figure}[h]
+\begin{SCfigure}
+	\begin{wide}
 	\input{fig/fig-lfhf}
 	\caption[Tracé pression - temps typique.]{L'alternance entre deux
 	amplitudes de percussions donne une apparence typique au tracé de la
@@ -89,11 +90,19 @@ fréquence.
 	avec un VDR-4. Les phases inspiratoires et expiratoires à basse
 	fréquence (courbe du haut) sont composées d'une succession
 	d'inspirations et d'expirations à haute fréquence (courbe du bas).}
-\end{figure}
+	\end{wide}
+\end{SCfigure}
 
 \section{Composantes du système}
 
 \subsection{Module de contrôle}
+
+\marginnote{%
+	\input{fig/fig-cartouche}
+	\captionof{figure}[Fonctionnement d'une cartouche pneumatique.]{Fonctionnement d'une cartouche pneumatique. À mesure que la pression
+	augmente derrière le diaphragme, celui-ci se déforme, emmenant  le piston à
+	obstruer l'arrivée de gaz.} 
+	}[-8cm]
 
 Le module de contrôle est la composante qui permet de régler les
 paramètres de la ventilation délivrée par le VDR-4.  À partir de son
@@ -130,16 +139,9 @@ exemple, une augmentation de l'amplitude des percussions à
 l'inspiration (bouton DEBIT PULSE) entrainera aussi une augmentation
 de l'amplitude des percussions à l'expiration.
 
-\begin{figure}
+\begin{figure}[t]
 	\includegraphics[width=\textwidth]{img/Module_de_controle}
 	\caption{Panneau avant du module de contrôle.}
-\end{figure}
-
-\begin{figure}
-	\input{fig/fig-cartouche}
-	\caption[Fonctionnement d'une cartouche pneumatique.]{Fonctionnement d'une cartouche pneumatique. À mesure que la pression
-	augmente derrière le diaphragme, celui-ci se déforme, emmenant  le piston à
-	obstruer l'arrivée de gaz.} 
 \end{figure}
 
 \subsection{Phasitron}
@@ -155,6 +157,16 @@ trachéotomie, etc.). Il remplit les deux fonctions suivantes:
 	\item Valve expiratoire.
 \end{itemize}
 
+\marginnote{%
+	\input{fig/fig-phasitron-coupe}
+	\captionof{figure}[Fonctionnement du phasitron.]{Fonctionnement du phasitron.
+	Le débit en provenance du module de contrôle déforme le diaphragme
+	et déplace le tube de venturi vers l'avant lors de l'inspiration,
+	obstruant ainsi l’orifice expiratoire. À l'expiration, le diaphragme
+	reprend sa forme initiale et ramène le tube de venturi vers
+	l'arrière, libérant ainsi l'orifice expiratoire.} 
+	\label{fig:phasitron-coupe}
+	}[-8cm]
 L'amplification du jet de gaz se fait par un appel d'air (principe de
 venturi).  Le ratio \emph{air aspiré: air injecté} du tube de venturi
 diminue au fur et à mesure que la pression augmente à la sortie de
@@ -178,17 +190,6 @@ percussions dans le volume compressible du circuit.
 	\caption{Le phasitron.}
 \end{figure}
 
-\begin{figure}
-	\input{fig/fig-phasitron-coupe}
-	\caption[Fonctionnement du phasitron.]{Fonctionnement du phasitron.
-	Le débit en provenance du module de contrôle déforme le diaphragme
-	et déplace le tube de venturi vers l'avant lors de l'inspiration,
-	obstruant ainsi l’orifice expiratoire. À l'expiration, le diaphragme
-	reprend sa forme initiale et ramène le tube de venturi vers
-	l'arrière, libérant ainsi l'orifice expiratoire.} 
-	\label{fig:phasitron-coupe}
-\end{figure}
-
 \subsection{Système d’humidification}
 
 Le système d'humidification de base du VDR-4 est un nébuliseur pneumatique.
@@ -204,16 +205,11 @@ venturi du phasitron. Le circuit d'humidification est conçu de façon à:
 Plusieurs institutions utilisant le VDR-4 jugent ce système 
 d'humidification insuffisant et le combine ou le remplace par un 
 (ou même deux) humidificateur chauffant (voir Figure \ref{fig:circ}).
-
-%\begin{figure}
-%	\caption{Circuit d'humidification "classique" du VDR-4.}
-%\end{figure}
-
-\begin{figure}
+\marginpar{
 	\input{fig/fig-circuit.tex}
-	\caption{Intégration d'un humidificateur chauffant au circuit du VDR-4.}
+	\captionof{figure}{Intégration d'un humidificateur chauffant au circuit du VDR-4.}
 	\label{fig:circ}
-\end{figure}
+}
 
 \subsection{Module de monitorage (Monitron)}
 
@@ -260,20 +256,3 @@ au seuil d’alarme réglé pour une durée supérieure à 30 secondes.
 La touche SET ajuste automatiquement l'alarme basse à 2 \cmh et l'alarme haute
 à 10 \cmh au-dessus de la pression de crête inspiratoire.
 
-\begin{exercice}[Prise en main]
-	\begin{materiel}
-		\item Un poumon témoin (poumon test)
-		\item Un phasitron
-		\item Un ensemble de tubulures 
-	\end{materiel}
-
-	\begin{procedure}
-	\item Bracher l'alimentation d'air et d'oxygène\\
-		{\em \small Il n'est pas nécessaire de brancher l'alimentation électrique}
-	\item Brancher le circuit et le phasitron
-	\item Brancher le poumon témoin à la sortie patient du phasitron
-	\item Positionner tout les réglages à la position 0 (Flèche à midi)
-	\item Mettre le ventilateur en marche
-	\item Observer le poumon témoin et décrire ce que vous voyez
-	\end{procedure}
-\end{exercice}

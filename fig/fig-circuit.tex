@@ -1,3 +1,4 @@
+\tikzsetnextfilename{fig-circuit}
 \begin{tikzpicture}[
 	scale=0.15,
 	very thin,
@@ -12,7 +13,7 @@
 \pic [name=F] {fp};
 \pic [name=N] at (15,10) {neb};
 \pic [yscale=1.22, xscale=-1.22, name=P] at (25, 35) {phasitron};
-\pic [scale=1.8, very thin, name=VDR] at (-25,40) {vdr};
+\pic [scale=1.8, very thin, name=VDR] at (-20,40) {vdr};
 \foreach \x in {1,...,4} {\pic at (VDR-C\x) {connector};}
 
 \pic [name=M] at(N-CR) {manifold};
@@ -31,7 +32,7 @@
 ]
 	\draw (VDR-C1)  -| (P-M);
 	\draw (VDR-C2) -- ++(8,0) |- (P-S);
-	\draw (VDR-C4) -- ++(12, 0) -- ++(0, -30) -| (N-CN);
+	\draw (VDR-C4) -- ++(6, 0) -- ++(0, -30) -| (N-CN);
 \end{scope}
 
 \begin{scope}[

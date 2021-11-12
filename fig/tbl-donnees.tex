@@ -1,31 +1,26 @@
-\begin{table*}
-	\centering
-	\caption{Données affichées par le Multimètre numérique et par le Monitron. }
-	\begin{tabular}{cc}
-		\hline
-		Multimètre du module de contrôle & Monitron \\
-		\hline
-		\parbox{16em}{
-			\raggedright
-			\emph{Pression inspiratoire moyenne *}\\
-			\emph{Pression expiratoire moyenne *}\\
-			Pression moyenne globale\\
-			\emph{Fréquence de percussion ($F_{perc}$) *
-			}
-			} & \parbox{16em}{
-				\raggedright
-				Pression inspiratoire de crête\\
-				Pression expiratoire de crête (PEP)\\
-				Pression moyenne globale\\
-				\emph{Ti (convection) *}\\
-				\emph{Te (convection) *}\\
-				I:E\\
-				F\textsubscript{conv}\\
-				\emph{Fréquence de percussion ($F_{perc}$) *}\\
-				i:e
-				}\\
-				\hline
-	\end{tabular}
+\def\ptitle#1{\vspace{.4\baselineskip}\textbf{#1}\par\vspace{0.4\baselineskip}}
 
-	* \emph{Données utilisées dans le protocole clinique du CHUM}
-\end{table*}
+\begin{framed}
+	\ptitle{Données affichées par le Multimètre numérique et par le Monitron. }
+	\ptitle{Multimètre du module de contrôle }
+	\protochum{Pression inspiratoire moyenne}\\
+	\protochum{Pression expiratoire moyenne}\\
+	Pression moyenne globale\\
+	\protochum{Fréquence de percussion ($F_{perc}$)}
+
+	\ptitle{Monitron}
+	\raggedright
+	Pression inspiratoire de crête\\
+	Pression expiratoire de crête (PEP)\\
+	Pression moyenne globale\\
+	\protochum{Ti (convection)}\\
+	\protochum{Te (convection)}\\
+	I:E\\
+	F\textsubscript{conv}\\
+	\protochum{Fréquence de percussion ($F_{perc}$)}\\
+	i:e
+
+	\vspace{0.2\baselineskip}
+	{\small *\protochum{}\space \emph{Données utilisées dans le
+	protocole clinique du CHUM}}
+	\end{framed}

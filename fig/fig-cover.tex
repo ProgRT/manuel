@@ -1,0 +1,16 @@
+\begin{tikzpicture}[
+	cliphex/.style={
+	clip,
+	rounded corners,
+	}
+]
+	\begin{scope}
+		\draw [cliphex]\hexagon{3cm};
+		\node [yshift=-.5cm, xshift=0cm, scale=0.7]{\includegraphics{fig-pdf/fig-lfhf.pdf}};
+	\end{scope}
+
+	\begin{scope}
+		\draw [cliphex] (-60:5cm) \hexagon{2cm};
+	\node [yshift=2mm, xshift=.7mm, scale=0.59] at(-60:5cm) {\includegraphics{fig-pdf/fig-cartouche.pdf}};
+	\end{scope}
+\end{tikzpicture}

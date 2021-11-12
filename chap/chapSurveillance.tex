@@ -1,11 +1,13 @@
 \chapter{Surveillance clinique}
 
 \section{Données monitorées}
+\marginnote{\input{fig/tbl-donnees}}[-1.5cm]
 
 On retrouve à la fois des données mesurées sur le multimètre situé sur
 le dessus du module de contrôle et sur le Monitron. Certaines données
 sont même affichées aux deux endroits.
 
+\begin{auchum}
 \emph{Il est important de noter que pour l'application du protocole de
 ventilation du CHUM, c'est toujours les pressions affichées sur le
 multimètre du module de contrôle que l'on doit utiliser (moyenne
@@ -13,11 +15,13 @@ inspiratoire et moyenne expiratoire).  Les pressions affichées par le Monitron 
 sont lues à la crête de l'oscillation et sont par conséquent peu
 représentatives des pressions subies par les alvéoles pulmonaires.
 }
-\input{fig/tbl-donnees}
+\end{auchum}
 
 \begin{figure}
+	\begin{wide}
 	\input{fig/fig-multimeter}
 	\caption[Pressions affichées sur le multimètre numérique]{La pression inspiratoire moyenne et la pression expiratoire moyenne sont affichées sur me multimètre numérique se trouvant sur le dessus du ventilateur.}
+	\end{wide}
 \end{figure}
 
 \section{Monitorage du rapport \ie}
@@ -47,7 +51,8 @@ Les éléments à observer sont:
   percussions. Voir Figure~\ref{figie8}, courbe du bas. (observer à 5 ou 8 s par
   écran);
 \end{itemize}
-\begin{figure*}
+
+\begin{SCfigure}[20][t]
 	\input{fig/fig-ie1}
 	\caption[Rapport \ie\ adéquat et inversé (1 s par écran)]{Rapport \ie\ adéquat (en haut) et rapport \ie\ inversé (en
 	bas). On observe sur le tracé du bas un Te trop court ne permettant pas
@@ -56,12 +61,14 @@ Les éléments à observer sont:
 	résulte une faible amplitude de variation de pression à chaque
 	percussion. Vitesse de défilement à 1 s par écran.}
 	\label{figie1}
+\end{SCfigure}
+\begin{SCfigure}[][t]
 	\input{fig/fig-ieimg}
 	\caption[Rapport \ie\ adéquat et inversé (8 s par écran)]{Rapport \ie\ adéquat (en haut) et rapport \ie\ inversé (en
 	bas). On observe une diminution de l'amplitude de percussion sur le
 	tracé du bas. Vitesse de défilement à 8 s par écran.}
 	\label{figie8}
-\end{figure*}
+\end{SCfigure}
 
 \section{Alarme}\index{alarme}
 
@@ -136,6 +143,18 @@ sonner tant qu'elle n'a pas été réarmée.
 
 \subsection{Obstruction de la sonde}\index{obstruction!de la sonde s'intubation}
 
+\marginnote{
+\input{fig/fig-raw.tex}
+	\captionof{figure}[Modification de l'apparence de la courbe de pression suite à une
+	augmentation des résistances.]{Modification de l'apparence de la courbe de pression suite à une
+augmentation des résistances. Lorsque les résistances sont normales (à gauche),
+on observe une augmentation graduelle des pressions lors de l'inspiration.
+Cette augmentation correspond à l'augmentation de la pression alvéolaire.
+Lorsque les résistances sont élevées, les pressions sont élevées dès le début
+de l'inspiration et restent stable au cours de celle-ci.}
+\index{résistances!augmentées}
+}[-10cm]
+
 Étant donné l'absence de monitorage du débit, il est nécessaire de faire preuve
 d'une vigilance accrue afin de détecter cette complication. Une obstruction
 importante de la sonde peut se manifester par :
@@ -154,18 +173,6 @@ peut être partiellement dégonflé pour permettre à celles-ci de remonter dans
 l'oropharynx du patient. L'amplitude des percussions devra alors être réajustée
 à la hausse pour compenser la fuite créée.
 
-\begin{figure}
-\input{fig/fig-raw.tex}
-	\caption[Modification de l'apparence de la courbe de pression suite à une
-	augmentation des résistances.]{Modification de l'apparence de la courbe de pression suite à une
-augmentation des résistances. Lorsque les résistances sont normales (à gauche),
-on observe une augmentation graduelle des pressions lors de l'inspiration.
-Cette augmentation correspond à l'augmentation de la pression alvéolaire.
-Lorsque les résistances sont élevées, les pressions sont élevées dès le début
-de l'inspiration et restent stable au cours de celle-ci.}
-\index{résistances!augmentées}
-\end{figure}
-
 \subsection{Fuite ou déconnexion}\index{fuite}\index{déconnexion}
 
 Une fuite entre le phasitron et le patient ou au niveau du tube endotrachéal se
@@ -175,3 +182,7 @@ Une fuite dans le circuit d'humidification n’aura pas d'influence sur les
 pressions de ventilations. Elle pourra, par contre, modifier la concentration
 en oxygène du mélange gazeux administré au patient (appel d’air ambiant),
 entrainant une hypoxémie.
+\clearpage
+\begin{wide}
+\input{exr/exr-ie}
+\end{wide}

@@ -23,8 +23,8 @@
 	]
 
 	\begin{axis}[
-		width=0.65\textwidth,
-		height=6cm,
+		width=0.75\textwidth,
+		height=5cm,
 		name=plot,
 		font=\scriptsize,
 		try min ticks=6,
@@ -50,7 +50,7 @@
 
 	\end{axis}
 
-	\pic [opacity=0.99, name=mm] at ([xshift=3.2cm, yshift=0cm]plot.east) {multimeter};
+	\pic [opacity=0.99, name=mm, scale=1] at ([xshift=3.2cm, yshift=0cm]plot.east) {multimeter};
 
 		\node [grad] (mmg50) at (mmscreen.north west) {50};
 		\node [grad] (mmg0) at (mmscreen.south west) {0};

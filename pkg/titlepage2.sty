@@ -13,12 +13,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \def\framedtitle{
+	\centering
 	\@author
 \vskip3pt
 	\rule{\textwidth}{1pt}
 	\vskip 0.5\baselineskip
 	{\Huge\@title}\par
-	{\thesubtitle}
+	{\thesubtitle}\\
 	\rule{\textwidth}{1pt}
 }
 
@@ -29,10 +30,6 @@
 \def\mytitle{
 \framedtitle
 \vfill
-\begin{tikzpicture}[cliphex/.style={clip,rounded corners,}]
-	\draw [cliphex]\hexagon{3cm};
-	\node [yshift=-.5cm, xshift=0cm, scale=0.7]{\includegraphics{fig-pdf/fig-lfhf.pdf}};
-\end{tikzpicture}
 \vfill
 \thedate
 }
@@ -41,7 +38,7 @@
 % Basic legal notice
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\def\basiclegallotice{%
+\def\basiclegalnotice{%
 \clearpage
 
 \null\vfill
@@ -57,12 +54,12 @@ Tout droits réservés\pagebreak
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \def\makeNtitle{%
-\begin{titlingpage}
-\calccentering{\unitlength}
-\begin{adjustwidth*}{\unitlength}{-\unitlength}
-	\centering
-	\mytitle
-\end{adjustwidth*}
-\basiclegallotice
-\end{titlingpage}%
+	\begin{titlingpage}
+		\calccentering{\unitlength}
+		\begin{adjustwidth*}{\unitlength}{-\unitlength}
+			\centering
+			\mytitle
+		\end{adjustwidth*}
+		\basiclegalnotice
+	\end{titlingpage}%
 }

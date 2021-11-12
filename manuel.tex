@@ -1,30 +1,49 @@
-\documentclass[letterpaper, final]{memoir}
+\documentclass[letterpaper, final]{book}
 \makeindex
 
 \input{pkg}
 \input{symboles}
-
 \addbibresource{bibliography.bib}
-
+%\includeonly{chap/chapBackmatter}
 
 \title{Ventilation diffusive convective}
-\author{Nicolas Blais St-Laurent}
 \subtitle{\emph{Opérer} et \emph{comprendre} le ventilateur VDR-4}
+\author{Nicolas Blais St-Laurent}
 \date{2020}
 
 \begin{document}
 
+%%%%%%%%%%%%%%
+% Frontmatter
+%%%%%%%%%%%%%%
 \frontmatter
-\makeNtitle
+
+\include{chap/chapTitlepage}
 \include{chap/chapAvant-propos}
+
+\cleardoublepage
+\tableofcontents
+%\listoftables
+\clearpage
+\listoffigures
+%\listofexercices
+
+%%%%%%%%%%%%%%
+% Mainmatter
+%%%%%%%%%%%%%%
+
 \mainmatter
 \include{chap/chapIntro}
-%\include{chap/chapComposantes}
 \include{chap/chapParametres}
 \include{chap/chapSurveillance}
 
 %\chapter{Stratégies de ventilation}
 %\chapter{Données probantes}
 %\chapter{Au coeur de la bête}
+
+%%%%%%%%%%%%%%
+% Backmatter
+%%%%%%%%%%%%%%
+
 \include{chap/chapBackmatter}
 \end{document}
