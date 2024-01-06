@@ -4,12 +4,19 @@
 \input{pkg}
 \input{symboles}
 \addbibresource{bibliography.bib}
-%\includeonly{chap/chapBackmatter}
+\tikzexternalize
+%\includeonly{chap/chapSurveillance}
 
 \title{Ventilation diffusive convective}
 \subtitle{\emph{Opérer} et \emph{comprendre} le ventilateur VDR-4}
 \author{Nicolas Blais St-Laurent}
 \date{2020}
+\titlegraphic{\includegraphics{titlepage/cover}}
+
+\hypersetup{
+	pdftitle=Ventilation diffusive convective,
+	pdfauthor=Nicolas Blais St-Laurent
+}
 
 \begin{document}
 
@@ -17,9 +24,7 @@
 % Frontmatter
 %%%%%%%%%%%%%%
 \frontmatter
-
-\include{chap/chapTitlepage}
-\include{chap/chapAvant-propos}
+\maketitle
 
 \cleardoublepage
 \tableofcontents
@@ -45,5 +50,29 @@
 % Backmatter
 %%%%%%%%%%%%%%
 
-\include{chap/chapBackmatter}
+\begin{appendices}
+
+\newgeometry{
+	includeall,
+	margin=0.8in,
+	marginparwidth=0in,
+	marginparsep=0in
+}
+
+\chapter{Protocole clinique du Centre hospitalier de l'Université de Montréal}
+%\includepdf[pages=-]{../formationvdr4/documents/pub/INH-PROT-05-01.pdf}
+
+\titleformat{\chapter}[display]{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}   
+\titlespacing*{\chapter}{0pt}{-50pt}{40pt}
+
+\chapter{Horaire type d'une formation}
+\input{chap/horaire}
+
+\end{appendices}
+\restoregeometry
+
+\backmatter
+
+\printbibliography
+\printindex
 \end{document}

@@ -33,12 +33,12 @@ plusieurs réglages.
 
 \section[Amplitude de percussion]{Amplitude de percussion et pression d'équilibre}
 
-	\marginnote{
-		\centering
-		\input{fig/fig-graphinteraction}
-		\captionof{figure}{Effets du débit, de la fréquence et du ration \ie sur les
-		pressions d'équilibre et la'amplitude de percussion.}
-	}[-2cm]
+\begin{figure}
+	\centering
+	\input{fig/fig-graphinteraction}
+	\caption{Effets du débit, de la fréquence et du ration \ie{}
+	sur les pressions d'équilibre et la'amplitude de percussion.}
+\end{figure}
 
 On entend par	\emph{amplitude de percussion} la variation de pression
 	résultant de chaque percussion. La pression d'équilibre est quant à
@@ -96,27 +96,21 @@ Lorsqu'elle est activée, la troisième phase commence 0,8 seconde après
 	dans le protocole clinique en vigueur au CHUM.
 	\knobshow{C PRESSION DE\\CONVECTION}
 
-\begin{figure}
-	\input{fig/fig-cpr}
-	\caption[Augmentation de la pression de convection]{La fonction
-	\param{Augmentation de la pression de convection} engendre une
-	troisième phase débutant 0.8 secondes après le début de
-	l'inspiration (Courbe B).}
-\end{figure}
+	\begin{figure}
+		\begin{wide}
+		\input{fig/fig-cpr}
+		\caption[Augmentation de la pression de convection]{La fonction
+			\param{Augmentation de la pression de convection} engendre une
+			troisième phase débutant 0.8 secondes après le début de
+		l'inspiration (Courbe B).}
 
-%\begin{table} \centering \caption{Désignation des contrôles relatifs à
-%	l'amplitude de percussion.} \begin{tabular}{l l} \hline Paramètre &
-%		Désignation sur l'appareil\\ \hline Amplitude à l'inspiration
-%		(phase haute) & \param{DEBIT PULSE}\\ Amplitude à l'expiration
-%	(phase basse) & \param{CPAP OSCILLANTE}\\ Amplitude augmentée
-%	(troisième phase) & \param{PRESSION DE CONVECTION}\\ \hline
-%	\end{tabular} \end{table}
+		\input{fig/fig-interaction}
+		\caption{Interaction entre les paramètres d'amplitude.}
+		\label{figinterampl}
+	\end{wide}
+	\end{figure}
 
-\begin{figure} \centering \input{fig/fig-interaction}
-\caption{Interaction entre les paramètres d'amplitude.}
-\label{figinterampl} \end{figure}
-
-\section{Paramètres de cyclage à haute fréquence}
+\section{Cyclage à haute fréquence}
 
 Les valves contrôlant le cyclage à haute fréquence sont identifiées
 	par la couleur grise sur le module de contrôle.  Bien que les deux
@@ -133,7 +127,7 @@ Les valves contrôlant le cyclage à haute fréquence sont identifiées
 	aussi la fréquence de percussion.
 	\knobshow{e RAPPORT \ie}
 
-\section{Paramètres de cyclage à basse fréquence}
+\section{Cyclage à basse fréquence}
 
 Le cyclage à basse fréquence se règle en ajustant un temps
 	inspiratoire et un temps expiratoire.  La fréquence et le ratio
@@ -210,10 +204,8 @@ Le ratio inspiration: expiration (i:e) des percussions a une grande
 influence sur les pressions de ventilation. Plus le ratio i:e est
 élevé, plus les pressions serons élevées.
 
-\section{Séquence des réglages}
 
-\begin{figure*} \input{fig/fig-sequence} \caption{Séquence de réglage
-des paramètres.} \end{figure*}
+\section{Séquence des réglages}
 
 En raison des interactions entre les différents réglages, il est
 judicieux de régler en premier les paramètres ayant beaucoup
@@ -246,11 +238,22 @@ temps inspiratoire et expiratoire de la convection (basse fréquence),
 on attendra d'avoir ajusté les pressions de ventilation avant de
 régler avec précision ces deux paramètres.
 
-%\begin{wide}
+\begin{figure}
+	\begin{wide}
+		\tikzset{external/remake next}
+		\centering
+		\input{fig/fig-sequence} 
+		\caption{Séquence de réglage des paramètres.}
+	\end{wide}
+\end{figure}
+
 \newgeometry{
+	includeall,
+	margin=0.8in,
 	marginparwidth=0in,
 	marginparsep=0in
 }
+\tikzexternaldisable
 \input{exr/exr-controle}
+\tikzexternalenable
 \restoregeometry
-%\end{wide}

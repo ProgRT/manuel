@@ -1,6 +1,7 @@
 \newcommand{\pexp}{5}
 \newcommand{\pins}{18}
 \newcommand{\arrpos}{1.06}
+\tikzsetnextfilename{fig-multimeter}
 \begin{tikzpicture}[
 		pressmark/.style={
 			draw=gray,
@@ -51,12 +52,6 @@
 	\end{axis}
 
 	\pic [opacity=0.99, name=mm, scale=1] at ([xshift=3.2cm, yshift=0cm]plot.east) {multimeter};
-
-		\node [grad] (mmg50) at (mmscreen.north west) {50};
-		\node [grad] (mmg0) at (mmscreen.south west) {0};
-		\draw [pScale]	(mmg0) -- (mmg50) node [grad, left=0.0mm, pos=0.6, inner sep=0mm] {30};
-
-		\node [below, white, align=left, font=\tiny] at (mmscreen.south) {Percussionaire\\Corporation};
 
 	\node [pcircle] (pmi) at (mmPmi) {\pins};
 	\node [pcircle] (pme) at (mmPme) {\pexp};

@@ -1,11 +1,14 @@
-\centering
+\tikzsetnextfilename{fig-sequence}
 \begin{tikzpicture}
 
-	\pic [name=VDR, black!60, scale=0.8] {vdr};
+	\pic [name=VDR, black!60, scale=1] {vdr};
 
 	\begin{scope}[
 		every node/.style={
+			circle,
+			inner sep=0,
 			color=black,
+			fill=white,
 			}
 			]
 	\node (1) at (VDR-e) {1};
@@ -14,21 +17,6 @@
 	\node (4) at (VDR-O) {4};
 	\node (5) at (VDR-I) {5};
 	\node (6) at (VDR-E) {6};
-	\end{scope}
-
-	\begin{scope}[
-		every node/.style={
-			yshift=8mm,
-			align=center,
-			scale=0.5
-			}
-			]
-	\node at (VDR-e) {RAPPORT\\i/e};
-	\node at (VDR-i) {FREQUENCE\\DE PERCUSSION};
-	\node at (VDR-F) {DEPIT\\PULSE};
-	\node at (VDR-O) {CPAP\\OSCILLANTE};
-	\node at (VDR-I) {TEMPS\\INSPIRATOIRE};
-	\node at (VDR-E) {TEMPS\\EXPIRATOIRE};
 	\end{scope}
 
 	\begin{scope}[

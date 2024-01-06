@@ -3,15 +3,16 @@
 %%%%%%%%%%%%%%%%%%%%%%
 
 % Langue
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
 \usepackage[french]{babel}
 
-% Mise en page
+% Contenu
+\usepackage{amsmath}
 \usepackage{pgfplots}
 \usepackage{pdfpages}
-\usepackage{amsmath}
+\usepackage[url=false]{biblatex}
 \usepackage{makeidx}
+
+% Mise en page
 \usepackage{geometry}
 \usepackage{caption}
 \usepackage{framed}
@@ -19,20 +20,18 @@
 \usepackage{hyperref}
 \usepackage{fancyhdr}
 \usepackage{tocloft}
-\usepackage[url=false]{biblatex}
+\usepackage[toc, title]{appendix}
 \usepackage[outercaption, wide]{sidecap}
 \usepackage[framed]{ntheorem}
 \usepackage[nobottomtitles]{titlesec}
 
 % Paquets personnels
 
-\usepackage{logovdr}
 \usepackage{logochum}
-\usepackage{hexagon}
 \usepackage{vdr}
 \usepackage{horaire}
-\usepackage{pkg/titlepage2}
-\usepackage{pkg/exercice}
+\usepackage{titlepage2}
+\usepackage{exercice}
 
 % Librairies
 
@@ -47,6 +46,7 @@
 %%%%%%%%%%%%%%%%%%%%%%
 
 \hypersetup{
+	pdfusetitle,
 	hidelinks,
 	pdfencoding=unicode
 }
@@ -54,7 +54,7 @@
 \geometry{
 	includeall,
 	margin=0.8in,
-	marginparwidth=2.5in,
+	marginparwidth=2in,
 	marginparsep=0.3in
 }
 \pretolerance=1000
@@ -65,7 +65,7 @@
 \addtolength{\headwidth}{\marginparwidth}
 \addtolength{\headwidth}{\marginparsep}
 
-%\tikzexternalize[shell escape=-shell-escape]
+\tikzset{external/only named=true}
 \tikzsetexternalprefix{fig-pdf/}
 
 \setlength{\parskip}{.7em}
@@ -77,18 +77,29 @@
 \DefineBibliographyStrings{french}{in={dans}}
 \AtBeginDocument{\renewcommand{\listfigurename}{Liste des figures}}
 
+%%%%%%%%%
+% Macro
+%%%%%%%%%
+
+\def\param#1{{\small \uppercase{#1}}}
+
 \def\knobshow#1{%
 	\marginpar{%
 		\centering
 		\begin{tikzpicture} \pic [scale=1.5] {labeleb=#1}; \end{tikzpicture}}}
 
-\def\param#1{{\small \uppercase{#1}}}
-
-%%%%%%%%%
-% Macro
-%%%%%%%%%
-
 \def\protochum#1{#1 \logochum[height=11pt]}
 
 \theoremstyle{nonumberbreak}
 \newframedtheorem{auchum}{Au CHUM...}
+
+\newenvironment{fullwidth}{
+\newgeometry{
+	includeall,
+	margin=0.8in,
+	marginparwidth=0in,
+	marginparsep=0in
+}
+}{
+\restoregeometry
+}

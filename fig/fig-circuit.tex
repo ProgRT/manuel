@@ -1,57 +1,40 @@
 \tikzsetnextfilename{fig-circuit}
 \begin{tikzpicture}[
-	scale=0.15,
+	scale=0.32,
 	very thin,
 ]
 
-\begin{scope}[
-	every node/.style={
-		transform shape
-	},
-]
-
-\pic [name=F] {fp};
-\pic [name=N] at (15,10) {neb};
-\pic [yscale=1.22, xscale=-1.22, name=P] at (25, 35) {phasitron};
-\pic [scale=1.8, very thin, name=VDR] at (-20,40) {vdr};
-\foreach \x in {1,...,4} {\pic at (VDR-C\x) {connector};}
-
-\pic [name=M] at(N-CR) {manifold};
-\pic  at (M-BC) {bag};
-
+\begin{scope}[every node/.style={ transform shape }]
+	\pic [name=F] at(0,0) {fp};
+	\pic [name=N] at(15,10) {neb};
+	\pic [yscale=1.22, xscale=-1.22, name=P] at (25, 35) {phasitron};
+	\pic [scale=1.8, name=VDR] at (-20,40) {vdr};
+	\pic [name=M] at(N-CR) {manifold};
+	\pic  at (M-BC) {bag};
 \end{scope}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Hight presure  circuit
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{scope}[
-	every path/.style={
-		double distance=0.4mm,
-	}
-]
+\begin{scope}[every path/.style={double distance=0.8mm}]
 	\draw (VDR-C1)  -| (P-M);
 	\draw (VDR-C2) -- ++(8,0) |- (P-S);
 	\draw (VDR-C4) -- ++(6, 0) -- ++(0, -30) -| (N-CN);
 \end{scope}
 
-\begin{scope}[
-	every node/.style={
-		transform shape
-	},
-]
-
-\pic [yshift=11mm, xscale=-1, name=fsa] at (P-A) {failsafeValve};
-\pic [yshift=11mm, name=fse] at (P-E) {failsafeValve};
-
+\begin{scope}[every node/.style={transform shape}]
+	\pic [yshift=11mm, xscale=-1] (fsa) at (P-A) {failsafeValve};
+	\pic [yshift=11mm] (fse) at (P-E) {failsafeValve};
 \end{scope}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Humidification circuit
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{scope}[
 	every path/.style={
-		double distance=3.8mm,
+		double distance=7mm,
 		looseness=2,
 		shorten <=-1mm,
 		shorten >=-1mm
@@ -70,7 +53,6 @@
 \end{scope}
 
 % valves direction
-\node [xscale=-1, font=\tiny] at (fsa-V) {$\mapsto$};
-\node [xscale=-1, font=\tiny] at (fse-V) {$\mapsto$};
+\node foreach \pos in {a, e} [xscale=-1, font=\tiny] at(fs\pos-V) {$\mapsto$};
 
 \end{tikzpicture}

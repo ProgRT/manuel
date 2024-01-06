@@ -1,13 +1,19 @@
-\def\ptitle#1{\vspace{.4\baselineskip}\textbf{#1}\par\vspace{0.4\baselineskip}}
+\def\ptitle#1{%
+\vspace{.0\baselineskip}\raggedright\textbf{#1}\par\vspace{.8\baselineskip}%
+}
 
+	\begin{wide}
 \begin{framed}
+	\tikzexternaldisable
 	\ptitle{Données affichées par le Multimètre numérique et par le Monitron. }
+	\begin{minipage}[t]{0.49\textwidth}
 	\ptitle{Multimètre du module de contrôle }
 	\protochum{Pression inspiratoire moyenne}\\
 	\protochum{Pression expiratoire moyenne}\\
 	Pression moyenne globale\\
 	\protochum{Fréquence de percussion ($F_{perc}$)}
-
+\end{minipage}
+\begin{minipage}[t]{0.49\textwidth}
 	\ptitle{Monitron}
 	\raggedright
 	Pression inspiratoire de crête\\
@@ -19,8 +25,11 @@
 	F\textsubscript{conv}\\
 	\protochum{Fréquence de percussion ($F_{perc}$)}\\
 	i:e
+\end{minipage}
 
-	\vspace{0.2\baselineskip}
+	\vspace{\baselineskip}
 	{\small *\protochum{}\space \emph{Données utilisées dans le
 	protocole clinique du CHUM}}
-	\end{framed}
+	\tikzexternalenable
+\end{framed}
+\end{wide}

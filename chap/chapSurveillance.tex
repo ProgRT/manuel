@@ -1,7 +1,6 @@
 \chapter{Surveillance clinique}
 
 \section{Données monitorées}
-\marginnote{\input{fig/tbl-donnees}}[-1.5cm]
 
 On retrouve à la fois des données mesurées sur le multimètre situé sur
 le dessus du module de contrôle et sur le Monitron. Certaines données
@@ -23,6 +22,7 @@ représentatives des pressions subies par les alvéoles pulmonaires.
 	\caption[Pressions affichées sur le multimètre numérique]{La pression inspiratoire moyenne et la pression expiratoire moyenne sont affichées sur me multimètre numérique se trouvant sur le dessus du ventilateur.}
 	\end{wide}
 \end{figure}
+\input{fig/tbl-donnees}
 
 \section{Monitorage du rapport \ie}
 
@@ -52,7 +52,8 @@ Les éléments à observer sont:
   écran);
 \end{itemize}
 
-\begin{SCfigure}[20][t]
+\begin{fullwidth}
+\begin{figure}
 	\input{fig/fig-ie1}
 	\caption[Rapport \ie\ adéquat et inversé (1 s par écran)]{Rapport \ie\ adéquat (en haut) et rapport \ie\ inversé (en
 	bas). On observe sur le tracé du bas un Te trop court ne permettant pas
@@ -61,14 +62,14 @@ Les éléments à observer sont:
 	résulte une faible amplitude de variation de pression à chaque
 	percussion. Vitesse de défilement à 1 s par écran.}
 	\label{figie1}
-\end{SCfigure}
-\begin{SCfigure}[][t]
-	\input{fig/fig-ieimg}
+
+	\input{fig/fig-ie8}
 	\caption[Rapport \ie\ adéquat et inversé (8 s par écran)]{Rapport \ie\ adéquat (en haut) et rapport \ie\ inversé (en
 	bas). On observe une diminution de l'amplitude de percussion sur le
 	tracé du bas. Vitesse de défilement à 8 s par écran.}
 	\label{figie8}
-\end{SCfigure}
+\end{figure}
+\end{fullwidth}
 
 \section{Alarme}\index{alarme}
 
@@ -82,10 +83,12 @@ perd son alimentation en air ou en oxygène. Il n'y a pas de fonction
 lorsque l'alimentation des deux gaz est rétablie.
 
 \subsubsection{Alarme de surpression}\index{alarme!de surpression}
+\tikzsetnextfilename{arlm-surpression}
 \knobshow{{}{ALARME DE\\SURPRESSION}}
 \marginpar{%
 	\centering
 	\vspace{\baselineskip}
+	\tikzsetnextfilename{btn-raz}
 	\begin{tikzpicture}
 		\pic [] (PB){pushbutton};
 		\node [align=center, font=\scriptsize] at(1,0)  {REMISE\\À ZÉRO};
@@ -143,18 +146,6 @@ sonner tant qu'elle n'a pas été réarmée.
 
 \subsection{Obstruction de la sonde}\index{obstruction!de la sonde s'intubation}
 
-\marginnote{
-\input{fig/fig-raw.tex}
-	\captionof{figure}[Modification de l'apparence de la courbe de pression suite à une
-	augmentation des résistances.]{Modification de l'apparence de la courbe de pression suite à une
-augmentation des résistances. Lorsque les résistances sont normales (à gauche),
-on observe une augmentation graduelle des pressions lors de l'inspiration.
-Cette augmentation correspond à l'augmentation de la pression alvéolaire.
-Lorsque les résistances sont élevées, les pressions sont élevées dès le début
-de l'inspiration et restent stable au cours de celle-ci.}
-\index{résistances!augmentées}
-}[-10cm]
-
 Étant donné l'absence de monitorage du débit, il est nécessaire de faire preuve
 d'une vigilance accrue afin de détecter cette complication. Une obstruction
 importante de la sonde peut se manifester par :
@@ -182,7 +173,22 @@ Une fuite dans le circuit d'humidification n’aura pas d'influence sur les
 pressions de ventilations. Elle pourra, par contre, modifier la concentration
 en oxygène du mélange gazeux administré au patient (appel d’air ambiant),
 entrainant une hypoxémie.
-\clearpage
-\begin{wide}
+
+\begin{figure}[b]
+	\begin{wide}
+		\input{fig/fig-raw.tex}
+		\caption[Augmentation des résistances]{Modification de l'apparence de
+			la courbe de pression suite à une augmentation des résistances.
+			Lorsque les résistances sont normales (à gauche), on observe une
+			augmentation graduelle des pressions lors de l'inspiration. Cette
+			augmentation correspond à l'augmentation de la pression alvéolaire.
+			Lorsque les résistances sont élevées, les pressions sont élevées dès
+			le début de l'inspiration et restent stable au cours de celle-ci.}
+	\end{wide}
+\end{figure}
+
+\begin{fullwidth}
+\tikzexternaldisable
 \input{exr/exr-ie}
-\end{wide}
+\tikzexternalenable
+\end{fullwidth}

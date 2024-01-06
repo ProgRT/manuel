@@ -2,11 +2,11 @@
 \addplot graphics [
 	xmin=0,
 	ymin=0,
-	xmax=1,
+	xmax=8,
 	ymax=60
 ]}
 
-\tikzsetnextfilename{fig-ie1}
+\tikzsetnextfilename{fig-ie8}
 \begin{tikzpicture}
 
 \begin{groupplot}[
@@ -17,16 +17,16 @@
 		enlargelimits=false,
 		height=4cm,
 		width=\textwidth,
-		xtick={0, .25, .5, .75, 1},
+		xtick={0, 2, 4, 6, 8},
 		xlabel=Temps (s),
 		ylabel=Pression (hPa)
 ]
 
 \nextgroupplot
-\iehuit {img/509-gray.jpg};
+\iehuit {img/329-gray.jpg};
 
-	\nextgroupplot
-\iehuit{img/828-gray.jpg};
+\nextgroupplot
+\iehuit{img/629-gray.jpg};
 
 \end{groupplot}
 \end{tikzpicture}

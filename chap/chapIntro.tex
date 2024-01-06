@@ -162,7 +162,7 @@ trachéotomie, etc.). Il remplit les deux fonctions suivantes:
 	\captionof{figure}[Fonctionnement du phasitron.]{Fonctionnement du phasitron.
 	Le débit en provenance du module de contrôle déforme le diaphragme
 	et déplace le tube de venturi vers l'avant lors de l'inspiration,
-	obstruant ainsi l’orifice expiratoire. À l'expiration, le diaphragme
+	obstruant ainsi l'orifice expiratoire. À l'expiration, le diaphragme
 	reprend sa forme initiale et ramène le tube de venturi vers
 	l'arrière, libérant ainsi l'orifice expiratoire.} 
 	\label{fig:phasitron-coupe}
@@ -190,7 +190,7 @@ percussions dans le volume compressible du circuit.
 	\caption{Le phasitron.}
 \end{figure}
 
-\subsection{Système d’humidification}
+\subsection{Système d'humidification}
 
 Le système d'humidification de base du VDR-4 est un nébuliseur pneumatique.
 Celui-ci est utilisé pour humidifier les gaz qui sont aspirés par le tube de
@@ -205,12 +205,19 @@ venturi du phasitron. Le circuit d'humidification est conçu de façon à:
 Plusieurs institutions utilisant le VDR-4 jugent ce système 
 d'humidification insuffisant et le combine ou le remplace par un 
 (ou même deux) humidificateur chauffant (voir Figure \ref{fig:circ}).
-\marginpar{
-	\input{fig/fig-circuit.tex}
-	\captionof{figure}{Intégration d'un humidificateur chauffant au circuit du VDR-4.}
-	\label{fig:circ}
-}
 
+\begin{figure}
+	\begin{wide}
+	\input{fig/fig-circuit.tex}
+	\caption{Intégration d'un humidificateur chauffant au circuit du VDR-4.}
+	\label{fig:circ}
+	\end{wide}
+\end{figure}
+
+\begin{figure}
+	\includegraphics[width=\textwidth]{img/Monitron}
+	\caption{Panneau avant du monitron.}
+\end{figure}
 \subsection{Module de monitorage (Monitron)}
 
 Le Monitron est un moniteur électronique complètement indépendant du
@@ -220,11 +227,6 @@ limitées de celui-ci.
 Le signal de pression est transmis du module de contrôle au Monitron
 au moyen d'une tubulure se trouvant dans l'espace entre les deux
 appareils.
-
-\begin{figure}
-	\includegraphics[width=\textwidth]{img/Monitron}
-	\caption{Panneau avant du monitron.}
-\end{figure}
 
 \subsubsection{Données monitorées}
 
@@ -248,11 +250,11 @@ Les données numériques fournies par le Monitron sont les suivantes:
 Une alarme de basse pression et une alarme de haute pression peuvent être ajustées.
 
 L'alarme de haute pression se déclenche dès que la pression lue est supérieure
-au seuil d’alarme réglé.
+au seuil d'alarme réglé.
 
 L'alarme de pression basse se déclenche lorsque la pression lue est inférieure
-au seuil d’alarme réglé pour une durée supérieure à 30 secondes.
+au seuil d'alarme réglé pour une durée supérieure à 30 secondes.
 
 La touche SET ajuste automatiquement l'alarme basse à 2 \cmh et l'alarme haute
-à 10 \cmh au-dessus de la pression de crête inspiratoire.
+à 10 \cmh\ au-dessus de la pression de crête inspiratoire.
 
